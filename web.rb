@@ -1,28 +1,28 @@
-# require 'bundler'
-# Bundler.require
-require 'sinatra'
-require 'sinatra/reloader'
+require 'bundler'
+Bundler.require
+# require 'sinatra'
+# require 'sinatra/reloader'
 
-get '/' do
-  erb :index
+get '/disclaimer' do
+  erb :disclaimer
 end
 
-get '/story' do
-  erb :story
+get '/landing' do
+  erb :landing
 end
 
-get '/team' do
-  erb :team
+get '/family_risks' do
+  erb :family_risks
 end
 
-get '/contact' do
-  erb :contact
+get '/is_timing_right' do
+  erb :is_timing_right
 end
 
-get '/blog' do
-  erb :blog
+get '/pros_vs_cons' do
+  erb :pros_vs_cons
 end
 
-get '/technology' do
-  erb :technology
+get '/useful_info' do
+  erb :useful_info
 end
