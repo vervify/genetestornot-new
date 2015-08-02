@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Genetest</title>
+  <title>Gene Test Or Not?</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+    <div id="stamp">
+      <h2>Alzheimer's<br>Disease</h2>
+    </div>
+    <h1 id="title">Should I Get the Gene Test?</h1>
+</nav>
 
 <%= yield %>
 
+<footer>
+  <hr>
+  <h5>© 2015 Virginia Tech</h5>
+</footer>
 </body>
 </html>

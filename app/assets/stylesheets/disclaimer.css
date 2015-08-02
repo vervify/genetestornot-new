@@ -1,0 +1,35 @@
+body {
+  text-align: center;
+}
+
+nav {
+  color: blue;
+  height: 10em;
+}
+
+#stamp {
+  padding: 1em;
+  border: solid 0.1em blue;
+  display: inline;
+  float: left;
+}
+
+#title {
+  padding-top: 2em;
+}
+
+hr {
+  background: blue;
+  height: 0.25em;
+  margin: 0;
+}
+
+article {
+  margin: 2em;
+  border: solid 0.25em blue;
+  padding: 1em;
+}
+
+section {
+  text-align: left;
+}

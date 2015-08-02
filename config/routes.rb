@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'questions/disclaimer'
+
+  get 'questions/landing'
+
+  get 'questions/is_timing_right'
+
+  get 'questions/pros_vs_cons'
+
+  get 'questions/family_risks'
+
+  get 'questions/useful_info'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
