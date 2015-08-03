@@ -8,27 +8,33 @@ $susy: (
 );
 
 nav {
-  background: cyan;
 
-  .brand-logo {
+  height: 80px;
+
+  .logo {
+    float: left;
+    height: 80px;
+    width: 100px;
+    background: purple;
+    color: orange;
+    display: inline-block;
+  }
+
+  .logo-text {
     float: left;
     display: inline-block;
+    margin: 1em;
 
-    .logo {
-      height: 100px;
-      width: 100px;
-      background: blue;
-      display: inline-block;
+    &-one {
+      color: purple;
     }
+    &-two {
+      color: orange;
+    }
+  }
 
-    .logo-text {
-      display: inline-block;
-      margin: 2em;
-    }
-
-    p {
-      line-height: 0.2em;
-    }
+  p {
+    line-height: 0.2em;
   }
 
   ul {
@@ -36,7 +42,13 @@ nav {
     display: inline-block;
 
     li {
+      margin: 1em;
       display: inline-block;
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
