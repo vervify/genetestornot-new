@@ -10,11 +10,6 @@
 <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-        <div class="logo">
-          <p>Logo</p>
-          <p>Goes</p>
-          <p>Here</p>
-        </div>
         <div class="logo-text">
           <p class="logo-text-one">
             Gene Test
@@ -24,11 +19,11 @@
           </p>
         </div>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="">Home</a></li>
-        <li><a href="">The 4 Questions</a></li>
-        <li><a href="">Final Summary</a></li>
-        <li><a href="">Help</a></li>
-        <li><a href="">Other Resources</a></li>
+        <li><%=link_to "Home", landing_path%></li>
+        <li><%=link_to "The 4 Questions", info_path%></li>
+        <li><%=link_to "Final Summary", disclaimer_path%></li>
+        <li><%=link_to "Help", disclaimer_path%></li>
+        <li><%=link_to "Other Resources", disclaimer_path%></li>
       </ul>
     </div>
   </nav>

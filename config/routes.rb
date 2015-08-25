@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  get 'questions/disclaimer'
 
-  get 'questions/landing'
+  get '/patients/:id', to: 'patients#show', as: 'patient'
 
-  get 'questions/is_timing_right'
+  get 'questions/disclaimer', to: 'questions#disclaimer', as: 'disclaimer'
 
-  get 'questions/pros_vs_cons'
+  get 'questions/landing', to: 'questions#landing', as: 'landing'
 
-  get 'questions/family_risks'
+  get 'questions/is_timing_right', to: 'questions#is_timing_right', as: 'timing'
 
-  get 'questions/useful_info'
+  get 'questions/pros_vs_cons', to: 'questions#pros_vs_cons', as: 'pros'
+
+  get 'questions/family_risks', to: 'questions#family_risks', as: 'family'
+
+  get 'questions/useful_info', to: 'questions#useful_info', as: 'info'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
