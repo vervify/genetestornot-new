@@ -5,15 +5,15 @@ class QuestionsController < ApplicationController
   def landing
   end
 
-  def is_timing_right
+  def timing
   end
 
-  def pros_vs_cons
+  def pros
   end
 
-  def family_risks
+  def family
   end
 
-  def useful_info
+  def info
   end
 end
