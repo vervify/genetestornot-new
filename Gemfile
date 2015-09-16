@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# featherlight for video modals
+gem 'featherlight'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

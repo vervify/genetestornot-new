@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require featherlight
+ *= require featherlight-gallery
  */
 
 /*colors*/

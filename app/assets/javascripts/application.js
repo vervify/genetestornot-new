@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require featherlight
+//= require featherlight-gallery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
