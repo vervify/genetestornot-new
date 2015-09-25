@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Gene Test Or Not?</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body class="pg-useful">
-<div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-        <div class="logo-text">
-          <p class="logo-text-one">
-            Gene Test
-          </p>
-          <p class="logo-text-two">  
-            Or Not?
-          </p>
-        </div>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><%=link_to "Home", home_path%></li>
-        <li><%=link_to "The 4 Questions", family_risks_path%></li>
-        <li><%=link_to "Final Summary", results_path%></li>
-        <li><%=link_to "Help", about_path%></li>
-        <li><%=link_to "Other Resources", further_resources_path%></li>
-      </ul>
-    </div>
-  </nav>
-</div>
+	<head>
+		<title>Gene Test Or Not?</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body class="pg-useful">
+		<div class="header">
+			<nav>
+				<div class="menu-is-hidden">
+					<div class="trigger">
+						<span></span>
+						<div class="menu-title">Gene Test or Not</div>
+					</div>
+					<ul>
+						<li><%=link_to "Home", home_path%></li>
+						<li><%=link_to "The 4 Questions", family_risks_path%></li>
+						<!--
+						<li><%=link_to "Final Summary", results_path%></li>
+						-->
+						<li><%=link_to "About", about_path%></li>
+						<li><%=link_to "Other Resources", further_resources_path%></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="logo">
+				<a href="/"></a>
+			</div>
+		</div>
 
-<%= yield %>
+		<%= yield %>
 
-<%= render 'layouts/footer' %>
-</body>
+		<%= render 'layouts/footer' %>
+	</body>
 </html>

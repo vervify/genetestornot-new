@@ -1,62 +1,26 @@
 <footer>
-	<div class="column column-left">
-		<div class="footer-section">
-			<div class="footer-section-head">
-				<%= link_to "Gene Test Or Not?", home_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "How To Use This Site", how_to_use_this_website_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Making Your Decision", making_your_decision_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "About This Decision", about_this_decision_path %>
-			</div>
-		</div>
-	</div>
-	
-	<div class="column column-center">
-		<div class="footer-section">
-			<div class="footer-section-head">
-				<%= link_to "Questions", family_risks_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Family Risk", family_risks_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Useful Info", useful_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Timing", timing_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Pros and Cons", pros_and_cons_path %>
-			</div>
-		</div>
-	</div>
-	
-	<div class="column column-right">
-		<div class="footer-section">
-			<div class="footer-section-head">
-				<%= link_to "Additional Info", about_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Disclaimer", disclaimer_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Privacy Policy", privacy_policy_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Glossary", glossary_path %>
-			</div>
-			<div class="footer-section-link">
-				<%= link_to "Further Resources", further_resources_path %>
-			</div>
-		</div>
-		<br>
-	  <h5>© 2015 Virginia Tech</h5>
-	</div>
-
-
+	<ul>
+		<li>	<%= link_to "Home", home_path %></li>
+		<li>	<%= link_to "About", about_path %></li>
+		<li>	<%= link_to "The 4 Questions", family_risks_path %></li>
+		<!--
+		<li>	<%= link_to "Making Your Decision", making_your_decision_path %></li>
+		<li>	<%= link_to "About This Decision", about_this_decision_path %></li>
+		<li>	<%= link_to "Family Risk", family_risks_path %></li> 
+		<li>	<%= link_to "Useful Info", useful_path %></li>
+		<li>	<%= link_to "Timing", timing_path %></li>
+		<li>	<%= link_to "Pros and Cons", pros_and_cons_path %></li>
+		-->
+		<li>	<%= link_to "Privacy Policy", privacy_policy_path %></li>
+		<li>	<%= link_to "Glossary", glossary_path %></li>
+		<li>	<%= link_to "Further Resources", further_resources_path %></li>
+		<li>	<%= link_to "Disclaimer", disclaimer_path %></li>
+		<li>	<%= link_to "How To Use This Site", how_to_use_this_website_path %></li>
+	</ul>
+	<p>
+		© 2014 Virginia Tech | This genetic-test decision aid is based on research conducted by Doris Teichler Zallen as reported in her book: <a href="" class="bookname">
+			To Test or Not to Test: A Guide to Genetic Screening and Risk</a> (Rutgers University Press, 2008). Website development is a collaboration between Virginia Tech and Breakneck Turtles Productions. No financial or other conflicts of interest exist.
+	</p>
 </footer>
+
+

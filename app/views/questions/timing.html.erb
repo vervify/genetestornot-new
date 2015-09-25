@@ -1,64 +1,72 @@
-<div class="section-header-area">
-	<div class="header">
-		<div class="header-content">
-			<div class="question-number"><span>Question 3</span></div>
-			<h1>
-				Is this the right time in my life to take this test?
-			</h1>
-			<h2>
-				Because late-onset Alzheimer&rsquo;s tends to occur much later in our lives, for most of us genetic testing for susceptibility to it is not urgent.
-			</h2>
-		</div>
-	</div>
-</div>
-<div class="wrap">
-	<div class="content-area">
-		<div class="maincol">
-			<h3>For Adults to Consider</h3>
-			<p>Adults who have considered genetic testing say it is best to make a genetic testing decision when things are calm enough in your life so you have time to think it through. It can be difficult to think about the future when things are hectic. It's important to be emotionally prepared to deal with any feelings that may arise after testing. If you plan to get tested with family members or share your results with family members, it's important for everyone to be prepared. It can take a little time for everyone to be comfortable with the process.</p>
-			<hr/>
-			<h3>Children Should Wait to Get Tested</h3>
+<div class="main-body">
+
+
+			<h1><strong>Is this the right time in my life</strong> to take this&nbsp;test?</h1>
+
+			<div class="instructions">
+				<span>
+					First, <i> fully consider </i> the information below.
+					<span class="segment"> Then, at the end, </span> </span> <a href="#question"> submit your answer</a>.
+			</div>
+			<p>Because late-onset Alzheimer&rsquo;s tends to occur much later in our lives, <strong>for most of us genetic testing for susceptibility to it is not urgent</strong>.</p>
+			<h2>For Adults to Consider</h2>
+			<p>Adults who have considered genetic testing say it is best to make a genetic testing decision when things are calm enough in your life so you have time to think it through. It can be difficult to think about the future when things are hectic. It&rsquo;s important to be emotionally prepared to deal with any feelings that may arise after testing. If you plan to get tested with family members or share your results with family members, it&rsquo;s important for everyone to be prepared. It can take a little time for everyone to be comfortable with the process.</p>
+			<h2>Children Should Wait to Get Tested</h2>
 			<p>In general, children should not have genetic testing for diseases that come on later in life unless there is a medical benefit for them. Currently, there is no known medical benefit to children from having APOE testing. The consensus among doctors and genetic counselors is that parents should wait until their children are adults and can decide for themselves, just as you are doing now.</p>
-			<a href="">Further Resources about the Timing of the Gene Test</a>
-		</div>
-		<div class="sidebar">
-			<div class="sidebar-container" >
-				<div class="sidebar-block" id="sticker">
-					<div class="sidebar-body">
-						<div class="sidebar-content">
-							<div class="sidebar-intro">When you are ready to complete this section, please check one of the following boxes:</div>
-							<div class="questions">
-								<%= form_for @answer_list, url: pros_and_cons_path, method: 'GET' do |f| %>
-									<label>
-										<div>
-											<%= f.radio_button :timing, 'yes'%>
-											I feel this could be a good time to get tested.
-										</div>
-									</label>
-									<hr />
-									<label>
-										<div>
-											<%= f.radio_button :timing, 'no'%>
-											This is not the right time for me to get tested.
-										</div>
-									</label>
-									<hr />
-									<label>
-										<div>
-											<%= f.radio_button :timing, 'unsure'%>
-											I'm not sure if this is the right time to get tested.
-										</div>
-									</label>										
-									<%= f.hidden_field :useful, value: @answer_list.useful %>
-									<%= f.hidden_field :pros_and_cons, value: @answer_list.pros_and_cons %>
-									<%= f.hidden_field :family_risks, value: @answer_list.family_risks %>
-							    <%= f.submit "Next" %>
-								<% end %>
-							</div>
+			
+
+			<a name="question"></a>
+			
+
+			<hr />
+			<div class="question">
+				<div class="question-header">
+					Submit Your Answer Below:
+				</div>
+				<div class="question-body">
+					<h1>
+						Is this the right time in my life to take this test?
+					</h1>
+
+
+
+
+					<%= form_for @answer_list, url: pros_and_cons_path, method: 'GET' do |f| %>
+						<label>
+							<%= f.radio_button :timing, 'yes'%>
+							<span>
+								I feel this could be a good time to get tested.
+							</span>
+						</label>
+						<label>
+							<%= f.radio_button :timing, 'no'%>
+							<span>
+								This is not the right time for me to get tested.
+							</span>
+						</label>
+						<label>
+							<%= f.radio_button :timing, 'unsure'%>
+							<span>
+								I'm not sure if this is the right time to get tested.
+							</span>
+						</label>										
+						<%= f.hidden_field :useful, value: @answer_list.useful %>
+						<%= f.hidden_field :pros_and_cons, value: @answer_list.pros_and_cons %>
+						<%= f.hidden_field :family_risks, value: @answer_list.family_risks %>
+						<div class="button-area">
+							<%= f.submit "Next" %>
 						</div>
-					</div>
+					<% end %>
+
+
+
+
+					
 				</div>
 			</div>
+
 		</div>
-	</div>
-</div>
+
+
+
+

@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   end
 
   def results
-    binding.pry
+#    binding.pry
     render json: answer_list_params
   end
 

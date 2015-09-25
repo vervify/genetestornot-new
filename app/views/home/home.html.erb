@@ -1,2 +1,34 @@
-<h1>Home#home</h1>
-<p>Find me in app/views/home/home.html.erb</p>
+<style>
+	/* temporary hack ! */
+
+.header {
+	background: linear-gradient(to right,rgba(13, 166, 242, 0.95), rgba(145, 77, 179, 0.9)) ;
+}
+
+.header .logo {
+	display:none;
+}
+
+
+</style>
+
+
+
+<div class="homepage">
+	<div class="main-body">
+	<div class="logo-big">
+		<img src="http://nphillips.com/2015-09-14-sitemock03/img/logo-big.png" />
+	</div>
+	<h3>An online tool to help you decide whether or not to get a gene test for <span class="segment">late-onset</span> Alzheimer&rsquo;s Disease.</h3>
+	<p>Genetic testing can provide useful information for some people but may not be appropriate for others. Only you can decide whether genetic testing is right for you.</p>
+	<hr />
+	<form method="get" action="family-risks.html">
+		<div class="button-consider">
+
+			<%= link_to "Consider 4 Questions", family_risks_path %>
+			
+		</div>
+	</form>
+</div>
+</div>
+

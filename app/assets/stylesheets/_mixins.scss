@@ -1,0 +1,18 @@
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.red {
+	color:red;
+}
+$purple:hsla(280, 40%, 50%, .9);
+$blue: hsla(200, 90%, 50%, .95);
+$blue-full: hsla(200, 90%, 50%, 1);
+$bodywidth:36rem;
+$bodypadding:1rem;
+$large: 1000px;
+$small: 600px;
+
