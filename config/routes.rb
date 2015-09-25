@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   get 'home/how_to_use_this_website', as: 'how_to_use_this_website'
 
+  get 'home/making_your_decision', as: 'making_your_decision'
+
+  get 'home/about_this_decision', as: 'about_this_decision'
+
   get 'questions/timing', to: 'questions#timing', as: 'timing'
 
   get 'questions/pros_and_cons', to: 'questions#pros_and_cons', as: 'pros_and_cons'

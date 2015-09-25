@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def home
   end
-  
+
   def about
   end
 
@@ -18,5 +18,11 @@ class HomeController < ApplicationController
   end
 
   def how_to_use_this_website
+  end
+
+  def making_your_decision
+  end
+
+  def about_this_decision
   end
 end
