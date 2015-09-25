@@ -91,26 +91,32 @@ Genetic test results might affect my insurance* or medical privacy (even though 
 						<div class="sidebar-content">
 							<div class="sidebar-intro">When you are ready to complete this section, please check one of the following boxes:</div>
 							<div class="questions">
-								<label>
-									<input type="radio" class="radio" value=""   name="" />
-									<div>
-										I think the advantages outweigh the disadvantages for me.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										I think the disadvantages outweigh the advantages for me.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										I'm still not sure about the advantages and disadvantages for me.
-									</div>
-								</label>
+								<%= form_for @answer_list, url: results_path, method: 'GET' do |f| %>
+									<label>
+										<div>
+											<%= f.radio_button :pros_and_cons, 'yes'%>
+											I think the advantages outweigh the disadvantages for me.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :pros_and_cons, 'no'%>
+											I think the disadvantages outweigh the advantages for me.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :pros_and_cons, 'unsure'%>
+											I'm still not sure about the advantages and disadvantages for me.
+										</div>
+									</label>										
+									<%= f.hidden_field :useful, value: @answer_list.useful %>
+									<%= f.hidden_field :family_risks, value: @answer_list.family_risks %>
+									<%= f.hidden_field :timing, value: @answer_list.timing %>
+							    <%= f.submit "Next" %>
+								<% end %>
 							</div>
 						</div>
 					</div>

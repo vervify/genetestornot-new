@@ -1,19 +1,27 @@
 class QuestionsController < ApplicationController
-  def disclaimer
+  def family_risks
+    params[:answer_list] ? @answer_list = AnswerList.new(answer_list_params) : @answer_list = AnswerList.new
   end
 
-  def landing
+  def useful
+    params[:answer_list] ? @answer_list = AnswerList.new(answer_list_params) : @answer_list = AnswerList.new
   end
 
   def timing
+    params[:answer_list] ? @answer_list = AnswerList.new(answer_list_params) : @answer_list = AnswerList.new
   end
 
-  def pros
+  def pros_and_cons
+    params[:answer_list] ? @answer_list = AnswerList.new(answer_list_params) : @answer_list = AnswerList.new
   end
 
-  def family
+  def results
+    binding.pry
+    render json: answer_list_params
   end
 
-  def info
+  private
+  def answer_list_params
+    params.require(:answer_list).permit(:family_risks, :useful, :timing, :pros_and_cons)
   end
 end

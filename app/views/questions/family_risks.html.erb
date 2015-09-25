@@ -46,33 +46,39 @@
 						<div class="sidebar-content">
 							<div class="sidebar-intro">When you are ready to complete this section, please check one of the following boxes:</div>
 							<div class="questions">
-								<label>
-									<input type="radio" class="radio" value=""   name="" />
-									<div>
-										My family history indicates I may have a higher risk of getting Alzheimer&rsquo;s Disease.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										My family history does not indicate that I have a higher risk of getting Alzheimer&rsquo;s Disease.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										I am unsure of my family history.
-									</div>
-								</label>										
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										Regardless of my family history, I am very concerned about Alzheimer&rsquo;s Disease.
-									</div>
-								</label>
+								<%= form_for @answer_list, url: useful_path, method: 'GET' do |f| %>
+									<label>
+										<div>
+											<%= f.radio_button :family_risks, 'yes'%>
+											My family history indicates I may have a higher risk of getting Alzheimer&rsquo;s Disease.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :family_risks, 'no'%>
+											My family history does not indicate that I have a higher risk of getting Alzheimer&rsquo;s Disease.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :family_risks, 'unsure'%>
+											I am unsure of my family history.
+										</div>
+									</label>										
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :family_risks, 'concerned'%>
+											Regardless of my family history, I am very concerned about Alzheimer&rsquo;s Disease.
+										</div>
+									</label>
+									<%= f.hidden_field :useful, value: @answer_list.useful %>
+									<%= f.hidden_field :pros_and_cons, value: @answer_list.pros_and_cons %>
+									<%= f.hidden_field :timing, value: @answer_list.timing %>
+							    <%= f.submit "Next" %>
+								<% end %>
 							</div>
 						</div>
 					</div>
@@ -81,6 +87,3 @@
 		</div>
 	</div>
 </div>
-
-
-

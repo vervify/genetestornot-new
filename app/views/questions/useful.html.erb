@@ -40,26 +40,32 @@
 						<div class="sidebar-content">
 							<div class="sidebar-intro">Once you feel you understand the value of the information you can get from a gene test for Alzheimer&rsquo;s Disease click the Question Summary link to continue.</div>
 							<div class="questions">
-								<label>
-									<input type="radio" class="radio" value=""   name="" />
-									<div>
-										I realize there are limits to what a test will tell me but I think the information will help me.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										I don't think the genetic test will give me enough useful information.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										I'm not sure if a test would be useful or not for me.
-									</div>
-								</label>
+								<%= form_for @answer_list, url: timing_path, method: 'GET' do |f| %>
+									<label>
+										<div>
+											<%= f.radio_button :useful, 'yes'%>
+											I realize there are limits to what a test will tell me but I think the information will help me.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :useful, 'no'%>
+											I don't think the genetic test will give me enough useful information.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :useful, 'unsure'%>
+											I'm not sure if a test would be useful or not for me.
+										</div>
+									</label>										
+									<%= f.hidden_field :family_risks, value: @answer_list.family_risks %>
+									<%= f.hidden_field :pros_and_cons, value: @answer_list.pros_and_cons %>
+									<%= f.hidden_field :timing, value: @answer_list.timing %>
+							    <%= f.submit "Next" %>
+								<% end %>
 							</div>
 						</div>
 					</div>

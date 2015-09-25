@@ -1,17 +1,29 @@
 Rails.application.routes.draw do
 
-  root 'questions#landing'
+  root 'home#home'
 
-  get 'questions/disclaimer', to: 'questions#disclaimer', as: 'disclaimer'
+  get 'home/home', as: 'home'
 
-  get 'questions/landing', to: 'questions#landing', as: 'landing'
+  get 'home/about', as: 'about'
+
+  get 'home/disclaimer', as: 'disclaimer'
+
+  get 'home/further_resources', as: 'further_resources'
+
+  get 'home/privacy_policy', as: 'privacy_policy'
+
+  get 'home/glossary', as: 'glossary'
+
+  get 'home/how_to_use_this_website', as: 'how_to_use_this_website'
 
   get 'questions/timing', to: 'questions#timing', as: 'timing'
 
-  get 'questions/pros', to: 'questions#pros', as: 'pros'
+  get 'questions/pros_and_cons', to: 'questions#pros_and_cons', as: 'pros_and_cons'
 
-  get 'questions/family', to: 'questions#family', as: 'family'
+  get 'questions/family_risks', to: 'questions#family_risks', as: 'family_risks'
 
-  get 'questions/info', to: 'questions#info', as: 'info'
+  get 'questions/useful', to: 'questions#useful', as: 'useful'
+
+  get 'questions/results', to: 'questions#results', as: 'results'
 
 end

@@ -28,26 +28,32 @@
 						<div class="sidebar-content">
 							<div class="sidebar-intro">When you are ready to complete this section, please check one of the following boxes:</div>
 							<div class="questions">
-								<label>
-									<input type="radio" class="radio" value=""   name="" />
-									<div>
-										This is not the right time for me to get tested.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										I feel this could be a good time to get tested.
-									</div>
-								</label>
-								<hr />
-								<label>
-									<input type="radio" class="radio" value="" name="" />
-									<div>
-										I'm not sure if this is the right time to get tested.
-									</div>
-								</label>
+								<%= form_for @answer_list, url: pros_and_cons_path, method: 'GET' do |f| %>
+									<label>
+										<div>
+											<%= f.radio_button :timing, 'yes'%>
+											I feel this could be a good time to get tested.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :timing, 'no'%>
+											This is not the right time for me to get tested.
+										</div>
+									</label>
+									<hr />
+									<label>
+										<div>
+											<%= f.radio_button :timing, 'unsure'%>
+											I'm not sure if this is the right time to get tested.
+										</div>
+									</label>										
+									<%= f.hidden_field :useful, value: @answer_list.useful %>
+									<%= f.hidden_field :pros_and_cons, value: @answer_list.pros_and_cons %>
+									<%= f.hidden_field :family_risks, value: @answer_list.family_risks %>
+							    <%= f.submit "Next" %>
+								<% end %>
 							</div>
 						</div>
 					</div>
