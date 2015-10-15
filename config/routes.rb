@@ -2,32 +2,30 @@ Rails.application.routes.draw do
 
   root 'home#home'
 
-  get 'home/home', as: 'home'
+  get 'about' => "home", as: 'about'
 
-  get 'home/about', as: 'about'
+  get 'disclaimer' => "home", as: 'disclaimer'
 
-  get 'home/disclaimer', as: 'disclaimer'
+  get 'further_resources' => "home", as: 'further_resources'
 
-  get 'home/further_resources', as: 'further_resources'
+  get 'privacy_policy' => "home", as: 'privacy_policy'
 
-  get 'home/privacy_policy', as: 'privacy_policy'
+  get 'glossary' => "home", as: 'glossary'
 
-  get 'home/glossary', as: 'glossary'
+  get 'how_to_use_this_website' => "home", as: 'how_to_use_this_website'
 
-  get 'home/how_to_use_this_website', as: 'how_to_use_this_website'
+  get 'making_your_decision' => "home", as: 'making_your_decision'
 
-  get 'home/making_your_decision', as: 'making_your_decision'
+  get 'about_this_decision' => "home", as: 'about_this_decision'
 
-  get 'home/about_this_decision', as: 'about_this_decision'
+  get 'timing' => 'questions', as: 'timing'
 
-  get 'questions/timing', to: 'questions#timing', as: 'timing'
+  get 'pros_and_cons' => 'questions', as: 'pros_and_cons'
 
-  get 'questions/pros_and_cons', to: 'questions#pros_and_cons', as: 'pros_and_cons'
+  get 'family_risks' => 'questions', as: 'family_risks'
 
-  get 'questions/family_risks', to: 'questions#family_risks', as: 'family_risks'
+  get 'useful' => 'questions', as: 'useful'
 
-  get 'questions/useful', to: 'questions#useful', as: 'useful'
-
-  get 'questions/results', to: 'questions#results', as: 'results'
+  get 'results' => 'questions', as: 'results'
 
 end
