@@ -18,13 +18,13 @@ Rails.application.routes.draw do
 
   get 'about_this_decision' => "home", as: 'about_this_decision'
 
-  get 'timing' => 'questions', as: 'timing'
+  get 'is_the_timing_right' => 'questions', as: 'timing'
 
   get 'pros_and_cons' => 'questions', as: 'pros_and_cons'
 
   get 'family_risks' => 'questions', as: 'family_risks'
 
-  get 'useful' => 'questions', as: 'useful'
+  get 'is_the_information_useful' => 'questions', as: 'useful'
 
   get 'results' => 'questions', as: 'results'
 

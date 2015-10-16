@@ -80,28 +80,38 @@
 			<h1>
 				Does my family history put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people?
 			</h1>
-			<%= form_for @answer_list, url: useful_path, method: 'GET' do |f| %>
+
+			<form action="<%= useful_path %>" method="get">
 				<label>
-					<%= f.radio_button :family_risks, 'yes'%>
+					<%= radio_button_tag :family_risks, 'yes'%>
 					<span> My family history indicates I may have a higher risk of getting Alzheimer&rsquo;s Disease.	</span>
 				</label>
 				<label>
-					<%= f.radio_button :family_risks, 'no'%>
+					<%= radio_button_tag :family_risks, 'no'%>
 					<span> My family history does not indicate that I have a higher risk of getting Alzheimer&rsquo;s Disease.	</span>
 				</label>
 				<label>
-					<%= f.radio_button :family_risks, 'unsure'%>
+					<%= radio_button_tag :family_risks, 'unsure'%>
 					<span> I am unsure of my family history.	</span>
 				</label>
 				<label>
-					<%= f.radio_button :family_risks, 'concerned'%>
+					<%= radio_button_tag :family_risks, 'concerned'%>
 					<span> Regardless of my family history, I am very concerned about Alzheimer&rsquo;s Disease.	</span>
 				</label>
-				<%= f.hidden_field :useful, value: @answer_list.useful %>
-				<%= f.hidden_field :pros_and_cons, value: @answer_list.pros_and_cons %>
-				<%= f.hidden_field :timing, value: @answer_list.timing %>
-				<div class="button-area"> <%= f.submit "Next" %> </div>
-			<% end %>
+				<div class="button-area"> <a href="<%= useful_path %>"><%= button_tag "Next" %></a> </div>
+			</form>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	if (localStorage) {
+	  // LocalStorage is supported!
+	  // save our user's answer to local storage
+	  $( "button[type='submit']" ).click(function() {
+		  localStorage.setItem('family', $('input:checked').val());
+		});
+	} else {
+	  // No support. Use a fallback such as browser cookies or store on the server.
+	}
+</script>

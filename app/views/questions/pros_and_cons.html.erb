@@ -98,33 +98,27 @@
 				Will the advantages outweigh the disadvantages?
 			</h1>
 
-
-			<%= form_for @answer_list, url: results_path, method: 'GET' do |f| %>
+			<form action="<%= results_path %>" method="get">
 				<label>
-					<%= f.radio_button :pros_and_cons, 'yes'%>
+					<%= radio_button_tag :pros_and_cons, 'yes'%>
 					<span>
 						I think the advantages outweigh the disadvantages for me.
 					</span>
 				</label>
 				<label>
-					<%= f.radio_button :pros_and_cons, 'no'%>
+					<%= radio_button_tag :pros_and_cons, 'no'%>
 					<span>
 						I think the disadvantages outweigh the advantages for me.
 					</span>
 				</label>
 				<label>
-					<%= f.radio_button :pros_and_cons, 'unsure'%>
+					<%= radio_button_tag :pros_and_cons, 'unsure'%>
 					<span>
 						I'm still not sure about the advantages and disadvantages for me.
 					</span>
 				</label>										
-				<%= f.hidden_field :useful, value: @answer_list.useful %>
-				<%= f.hidden_field :family_risks, value: @answer_list.family_risks %>
-				<%= f.hidden_field :timing, value: @answer_list.timing %>
-				<div class="button-area">
-					<%= f.submit "Next" %>
-				</div>
-			<% end %>
+				<div class="button-area"> <a href="<%= results_path %>"><%= button_tag "Next", :name => nil %></a> </div>
+			</form>
 
 
 			
@@ -133,6 +127,18 @@
 </div>
 
 <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
+
+<script type="text/javascript">
+	if (localStorage) {
+	  // LocalStorage is supported!
+	  // save our user's answer to local storage
+	  $( "button[type='submit']" ).click(function() {
+		  localStorage.setItem('pros', $('input:checked').val());
+		});
+	} else {
+	  // No support. Use a fallback such as browser cookies or store on the server.
+	}
+</script>
 
 
 
