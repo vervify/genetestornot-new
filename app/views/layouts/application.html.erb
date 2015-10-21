@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Gene Test Or Not?</title>
+		<meta name=viewport content="width=device-width, initial-scale=1">
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
@@ -10,21 +11,28 @@
 	<body class="pg-useful">
 		<div class="header">
 			<nav>
-				<div class="menu-is-hidden">
+				<div class="nav-container">
 					<div class="trigger">
 						<span></span>
 						<div class="menu-title">Gene Test or Not</div>
 					</div>
 					<ul>
-						<li><%=link_to "Home", root_path%></li>
-						<li><%=link_to "The 4 Questions", family_risks_path%></li>
-						<!--
-						<li><%=link_to "Final Summary", results_path%></li>
-						-->
-						<li><%=link_to "About", about_path%></li>
-						<li><%=link_to "Other Resources", further_resources_path%></li>
+						<div class="show-always">
+							<li><%=link_to "Home", root_path%></li>
+							<li><%=link_to "About", about_path%></li>
+						</div>
+						<div class="show-only-on-mobile">
+							<!--						<li><%=link_to "Consider 4 Questions", family_risks_path%></li> -->
+							<li><%=link_to "Other Resources", further_resources_path%></li>
+							<li><%=link_to "Final Summary", results_path%></li>
+							<li><%=link_to "Privacy Policy", privacy_policy_path %></li>
+							<li><%=link_to "Glossary", glossary_path %></li>
+							<li><%=link_to "Further Resources", further_resources_path %></li>
+							<li><%=link_to "Disclaimer", disclaimer_path %></li>
+						</div>
 					</ul>
 				</div>
+
 			</nav>
 			<div class="logo">
 				<a href="/"></a>

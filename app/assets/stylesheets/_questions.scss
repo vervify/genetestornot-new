@@ -1,0 +1,189 @@
+.instructions {
+	margin-left:.5rem;
+	margin-right:.5rem;
+	margin-bottom:2rem;
+	margin-top:2.2rem;
+	position:relative;
+	font-size:.98rem;
+	color:  darken($blue,10%);
+	padding:1rem .5rem 1rem .5rem;
+	@media (min-width:$small) {
+		padding:1rem .6rem 1rem .6rem;
+	}
+	background: transparentize($blue,.9);
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	line-height: 1.3;
+	-webkit-border-radius: .2rem;
+	-moz-border-radius: .2rem;
+	border-radius: .2rem;
+	border:.1rem solid transparentize($blue,.7);
+	&:before {
+		content:'IMPORTANT';
+		background:$blue;
+		color:#fff;
+		width:7rem;
+		position:absolute;
+		left:50%;
+		margin-left:-3.5rem;
+		top:-.7rem;
+		text-align:center;
+		-webkit-border-radius: .2rem;
+		-moz-border-radius: .2rem;
+		border-radius: .2rem;
+	}
+	a {
+		color:  darken($blue,10%);
+		font-weight:inherit;
+		padding-bottom:1px;
+		border-bottom:1px dashed $blue;
+		&:hover {
+			text-decoration:none;
+		}
+	}
+}
+
+.question {
+	-webkit-border-radius: .2rem;
+	-moz-border-radius: .2rem;
+	border-radius: .2rem;
+	font-weight:400;
+	margin-left:.5rem;
+	margin-right:.5rem;
+	color:darken($blue,20%);
+	.question-header {
+		color:#fff;
+		background:$blue;
+		font-family: 'Roboto Condensed';
+		text-align:center;
+		line-height:1.2;
+		-webkit-border-top-left-radius: .2rem;
+		-webkit-border-top-right-radius: .2rem;
+		-moz-border-radius-topleft: .2rem;
+		-moz-border-radius-topright: .2rem;
+		border-top-left-radius: .2rem;
+		border-top-right-radius: .2rem;
+		font-weight:500;
+		font-size:1.3rem;
+		padding-top:.7rem;
+		padding-bottom:.7rem;
+	}
+	.question-body {
+		background:transparentize($blue,.88);
+		border-bottom:.1rem solid transparentize($blue,.7);
+		border-left:.1rem solid transparentize($blue,.7);
+		border-right:.1rem solid transparentize($blue,.7);
+		-webkit-border-bottom-right-radius: 2px;
+		-webkit-border-bottom-left-radius: 2px;
+		-moz-border-radius-bottomright: 2px;
+		-moz-border-radius-bottomleft: 2px;
+		border-bottom-right-radius: 2px;
+		border-bottom-left-radius: 2px;
+		h1 {
+			font-size:1.2rem;
+			padding-top:1rem;
+			margin-left:.7rem;
+			margin-right:.7rem;
+			margin-top:0;
+			color:darken($blue,20%);
+		}
+		p {
+			&:last-of-type {
+				margin-bottom:0;
+			}
+		}
+	}
+	// dark circle         f111
+	// circle o thin       f1db
+	// circle o regular    f10c
+	// check circle        f058
+	form {
+		label {
+			display:block;
+			cursor:pointer;
+		}
+		span {
+			display:block;
+			padding-left:2.7rem;
+			padding-right:1rem;
+			padding-top:.4rem;
+			padding-bottom:.4rem;
+			position:relative;
+			&:before, &:after {
+				position:absolute;
+				top:0;
+				left:.7rem;
+				font-size:1.5rem;
+				font-family:FontAwesome;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			&:before {
+				content:'\f111';
+				color:#fff;
+			}
+			&:after {
+				content:'\f1db';
+				color:$blue;
+			}
+		}
+		input[type=radio] {
+			position:absolute;
+			visibility:hidden;
+		}
+		input[type=radio]:checked + span{
+			background:#fff;
+			color:$blue;
+			font-weight:600;
+			border-top:.08rem solid transparentize($blue,.8);
+			border-bottom:.08rem solid transparentize($blue,.8);
+			&:before {
+				display:none;
+			}
+			&:after {
+				content:'\f058';
+			}
+		}
+		.button-area {
+			@include clearfix;
+			margin-top:.4rem;
+			border-top:.1rem solid transparentize($blue,.8);
+			padding-top:.8rem;
+			//			background:transparentize($blue,.88);
+			padding-bottom:1rem;
+		}
+		button,
+		input[type="submit"]
+		{
+			float:right; 
+			font-family:'Roboto';
+			font-weight:600;
+			padding:.4rem;
+			min-width:7rem;
+			color: #fff;
+			display:block;
+			margin-right:1rem;
+			background-color: $blue;
+			border: none;
+			box-shadow: 0 .05rem 0 darken($blue,10%);
+			-webkit-border-radius: .15rem;
+			-moz-border-radius: .15rem;
+			border-radius: .15rem;
+			font-size:1.1rem;
+			&:after {
+				content:'\f105';
+				padding-left:.5rem;
+				font-family:FontAwesome;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		}
+		button:hover, button.hover {
+			background-color: darken($blue,10%);
+		}
+		button:active, button.active {
+			background-color: darken($blue,10%);
+			box-shadow: 0 .2rem darken($blue,20%);
+		}
+	}
+}

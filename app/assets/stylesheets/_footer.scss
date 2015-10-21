@@ -1,0 +1,51 @@
+footer {
+	border-top:.1rem solid #ddd;
+	padding:1rem;
+	background:#fafafa;
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+	background:#fff;
+}
+	p {
+		color: rgba(0,0,0,0.7);	
+		font-family:'Roboto';
+		margin-left:0;
+		margin-right:0;
+		font-size:.95rem;
+		line-height:1.5;
+		font-weight:400;
+		a {
+			color: rgba(0,0,0,0.7);	
+			text-decoration:underline;
+			font-weight:400;
+		}
+	}
+	ul {
+		list-style-type:none;
+		padding:0;
+		margin:0;
+		@include clearfix;
+	}
+	li {
+		padding:0;
+		margin:0;
+		font-family: 'Roboto';
+		a {
+			font-weight:500;
+		}
+		@media (min-width:$small) {
+			font-family: 'Roboto Condensed';
+			float:left;
+			a {
+				display:block;
+				margin-right:1.2rem;
+			}
+		}		
+	}
+	.is-active {
+		a {
+			color: rgba(0, 0, 0, 0.3) ;
+		}
+		@media (min-width:$small) {
+		}
+	}
+}

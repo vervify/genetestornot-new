@@ -15,8 +15,33 @@
  *= require featherlight-gallery
  */
 
-/*colors*/
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700,700italic,300italic,300);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic);
 
-.blue {
-  color: blue;
-}
+
+@import "susy";
+@import "normalize-rails";
+@import "variables";
+@import "mixins";
+
+@import "general";
+@import "nav";
+@import "mobile-nav";
+
+@import "footer";
+
+@import "questions";
+@import "charts";
+
+@import "pg-home";
+
+@import "pg-proscons";
+@import "pg-resources";
+
+
+
+
+
+
