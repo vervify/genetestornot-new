@@ -1,26 +1,24 @@
-<div class="main-body">
-	<h1>Your Results</h1>
-	<div class="instructions">
-		For your privacy and security the site does not save your information on the site. If you need more time to review the questions, you are welcome to return at any time.
+<div class="resultspage">
+	<div class="row">
+		<div class="column">
+			<h1>Your Results</h1>
+			<div class="instructions">
+				For your privacy and security the site does not save your information on the site. If you need more time to review the questions, you are welcome to return at any time.
+			</div>
+			<h1>Does my <strong>family history</strong> put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people?</h1>
+			<h3>You answered: <strong id="family"></strong></h3>
+			<br>
+			<h1>Will the genetic test give me <strong>useful information</strong>?</h1>
+			<h3>You answered: <strong id="useful"></strong></h3>
+			<br>
+			<h1><strong>Is this the right time in my life</strong> to take this&nbsp;test?</h1>
+			<h3>You answered: <strong id="timing"></strong></h3>
+			<br>
+			<h1>Will the <strong>advantages</strong> outweigh the <strong>disadvantages</strong>?</h1>
+			<h3>You answered: <strong id="pros"></strong></h3>
+		</div>
 	</div>
-
-	<h1>Does my <strong>family history</strong> put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people?</h1>
-	<h3>You answered: <strong id="family"></strong></h3>
-	<br>
-
-	<h1>Will the genetic test give me <strong>useful information</strong>?</h1>
-	<h3>You answered: <strong id="useful"></strong></h3>
-	<br>
-
-	<h1><strong>Is this the right time in my life</strong> to take this&nbsp;test?</h1>
-	<h3>You answered: <strong id="timing"></strong></h3>
-	<br>
-
-	<h1>Will the <strong>advantages</strong> outweigh the <strong>disadvantages</strong>?</h1>
-	<h3>You answered: <strong id="pros"></strong></h3>
 </div>
-
-
 <script type="text/javascript">
 	$(function(){
 		$('#family').html(localStorage.getItem('family'));

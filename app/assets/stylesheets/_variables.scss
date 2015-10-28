@@ -1,21 +1,48 @@
 $purple:hsla(280, 40%, 50%, .9);
 $blue: hsla(200, 90%, 50%, .95);
 $blue-full: hsla(200, 90%, 50%, 1);
-$bodywidth:36rem;
-$bodypadding:1rem;
+$bodywidth-main:39rem;
+$bodymargin:1rem;
 $large: 1000px;
-$small: 600px;
-
+$breakpoint: 600px;
 .red {
 	color:red;
 }
 .blue {
 	color:blue;
 }
-
-
-
 .purple {
 	color:darken($purple,10%);
 }
-
+$line-height-sm: 1.2;
+$link-weight: 600;
+$link-color: darken($blue, 10%);
+@mixin elegant {
+	content:'';
+	left:0;
+	position:absolute;
+	width:100%;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), transparentize(#000,.8), rgba(0, 0, 0, 0));
+}
+@mixin ptserif {
+	font-family: 'PT Serif';
+	font-weight:100;
+	line-height:1.6;
+	color: rgba(0,0,0,0.8);	
+}
+@mixin lato {
+	font-family:'Lato', sans-serif;
+	font-weight:inherit;
+}
+@mixin roboto {
+	font-weight:100;
+	font-family:'Roboto Condensed', sans-serif;
+	font-size:1.2rem;
+	font-weight:400;
+}
+@mixin fa {
+	font-family:FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

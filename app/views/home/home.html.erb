@@ -1,34 +1,59 @@
 <style>
-	/* temporary hack ! */
+	.header {
+		display:none;
+	}
 
-.header {
-	background: linear-gradient(to right,rgba(13, 166, 242, 0.95), rgba(145, 77, 179, 0.9)) ;
+	@media (min-width:600px) {
+		.header {
+			background: linear-gradient(to right,rgba(13, 166, 242, 0.95), rgba(145, 77, 179, 0.9));
+		}
+		
+	.header .logo {
+		display:none;
+	}
+	.logo-big {
+		display:block;
+	}
 }
 
-.header .logo {
-	display:none;
-}
+	.main-content {
 
-
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-bottom:0;
+	}
 </style>
-
-
-
 <div class="homepage">
-	<div class="main-body">
-	<div class="logo-big">
-		<%= image_tag('logo.png') %>
-	</div>
-	<h3>An online tool to help you decide whether or not to get a gene test for <span class="segment">late-onset</span> Alzheimer&rsquo;s Disease.</h3>
-	<p>Genetic testing can provide useful information for some people but may not be appropriate for others. Only you can decide whether genetic testing is right for you.</p>
-	<hr />
-	<form method="get" action="family-risks.html">
-		<div class="button-consider">
+	<div class="row">
+		<div class="column">
+			<div class="logo-big">
+				<%= image_tag('logo.png') %>
+			</div>
 
-			<%= link_to "Consider 4 Questions", family_risks_path %>
-			
+			<div class="home-paragraphs">
+				<div class="home-para1">
+					An online tool to help you decide whether or not to get a gene test for <span class="segment">late-onset</span> Alzheimer&rsquo;s Disease.
+				</div>
+				<div class="home-para2">
+
+					<p>
+						Genetic testing can provide useful information for some people but may not be appropriate for others. 
+					</p>
+
+
+					<p>
+						Only you can decide whether genetic testing is right for you.
+					</p>
+
+				</div>
+			</div>
+
+			<form method="get" action="family-risks.html">
+				<div class="button-consider">
+					<%= link_to "Consider 4 Questions", family_risks_path %>
+				</div>
+			</form>
 		</div>
-	</form>
+	</div>
 </div>
-</div>
-

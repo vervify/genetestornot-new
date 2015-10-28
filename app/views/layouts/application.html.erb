@@ -8,39 +8,42 @@
 		<%= csrf_meta_tags %>
 		<%= favicon_link_tag 'logo.ico' %>
 	</head>
-	<body class="pg-useful">
-		<div class="header">
-			<nav>
-				<div class="nav-container">
-					<div class="trigger">
-						<span></span>
-						<div class="menu-title">Gene Test or Not</div>
+	<div class="header">
+		<nav>
+			<div class="row">
+				<div class="column">
+					<div class="nav-container">
+						<div class="trigger">
+							<span></span>
+							<div class="menu-title">Gene Test or Not</div>
+						</div>
+						<ul>
+							<div class="show-always">
+								<li><%=link_to "Home", root_path%></li>
+								<li><%=link_to "About", about_path%></li>
+							</div>
+							<div class="show-only-on-mobile">
+								<!--						<li><%=link_to "Consider 4 Questions", family_risks_path%></li> -->
+								<li><%=link_to "Other Resources", further_resources_path%></li>
+								<li><%=link_to "Final Summary", results_path%></li>
+								<li><%=link_to "Privacy Policy", privacy_policy_path %></li>
+								<li><%=link_to "Glossary", glossary_path %></li>
+								<li><%=link_to "Further Resources", further_resources_path %></li>
+								<li><%=link_to "Disclaimer", disclaimer_path %></li>
+							</div>
+						</ul>
 					</div>
-					<ul>
-						<div class="show-always">
-							<li><%=link_to "Home", root_path%></li>
-							<li><%=link_to "About", about_path%></li>
+					<div class="logo-area">
+						<div class="logo">
+							<a href="/"></a>
 						</div>
-						<div class="show-only-on-mobile">
-							<!--						<li><%=link_to "Consider 4 Questions", family_risks_path%></li> -->
-							<li><%=link_to "Other Resources", further_resources_path%></li>
-							<li><%=link_to "Final Summary", results_path%></li>
-							<li><%=link_to "Privacy Policy", privacy_policy_path %></li>
-							<li><%=link_to "Glossary", glossary_path %></li>
-							<li><%=link_to "Further Resources", further_resources_path %></li>
-							<li><%=link_to "Disclaimer", disclaimer_path %></li>
-						</div>
-					</ul>
+					</div>
 				</div>
-
-			</nav>
-			<div class="logo">
-				<a href="/"></a>
 			</div>
-		</div>
-
+		</nav>
+	</div>
+	<div class="main-content">
 		<%= yield %>
-
-		<%= render 'layouts/footer' %>
-	</body>
+	</div>
+	<%= render 'layouts/footer' %>
 </html>

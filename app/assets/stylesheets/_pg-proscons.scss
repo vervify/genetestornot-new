@@ -60,7 +60,7 @@ p.quote-blue {
 	}
 	h4 {
 		padding-right:5.5rem;
-		@media (min-width:$small) {
+		@media (min-width:$breakpoint) {
 			padding-right:10rem;
 		}
 	}
@@ -70,7 +70,7 @@ p.quote-blue {
 		z-index:200;
 		top:0;
 		right:-4rem;
-		@media (min-width:$small) {
+		@media (min-width:$breakpoint) {
 			top:0;
 			max-width:12rem;
 			right:0;
