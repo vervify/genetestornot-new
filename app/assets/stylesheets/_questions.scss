@@ -194,3 +194,34 @@
 		}
 	}
 }
+
+
+.progress{
+	height: 25px; 
+  width: 75px;
+  float: left; /*Here you can also use display: inline-block instead of float:left*/
+	-webkit-border-radius: .2rem;
+	-moz-border-radius: .2rem;
+	border-radius: .2rem;
+	color:#fff;
+	font-size:1.1rem;
+	line-height: 1.3rem;
+	margin-left:1rem;
+	font-family:'Roboto';
+	font-weight: 400;
+	box-shadow:0 .2rem .2rem rgba(0, 0, 0, 0.2);
+	text-align: center;
+
+  &-complete {
+	  background-color: $purple; 
+  }
+
+  &-current {
+  	border: 1px solid darken($purple, 20%);
+  	background-color: lighten($purple,20%);
+  }
+
+  &-incomplete {
+  	background-color: lighten($purple,20%);
+  }
+}

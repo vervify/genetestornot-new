@@ -6,7 +6,12 @@
 					Question 1
 				</div>
 				<div class="qnav-pg">
-					count
+					<div class="section-pro">
+						<div class="progress progress-current">1</div>
+						<div class="progress progress-incomplete">2</div>
+						<div class="progress progress-incomplete">3</div>
+						<div class="progress progress-incomplete">4</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -15,7 +20,7 @@
 <div class="familyriskspage">
 	<div class="row">
 		<div class="column">
-			<h1> Does my <strong>family history</strong> put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people?  </h1>
+			<h1> Does my <strong>family history</strong> put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people? </h1>
 			<div class="instructions">
 				<span>
 					First, <i>fully consider</i> the information below.
@@ -79,7 +84,7 @@
 			</span></h2>
 			<p>To determine if your family history may put you at higher risk, you need to know if anyone in your immediate family (parents, brothers and sisters) has or had late onset Alzheimer&rsquo;s.</p>
 			<p>Once you know your family history please answer the following questions.</p>
-			<p><span class="red">* Note:</span> If you are adopted or otherwise unable to obtain your family history, this question may not apply to your final decision. Please read through as this section includes some useful general information.</p>
+			<p><span class="red">* Note:</span> If you are adopted or otherwise unable to obtain your family history, this question may not apply to your final decision, but you can select “I am unsure of my family history” below.</p>
 			<p class="further-resources-link">
 				<%= link_to "Further Resources about Family History", further_resources_path %>
 			</p>
@@ -93,7 +98,6 @@
 					<h1>
 						Does my family history put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people?
 					</h1>
-
 					<form action="<%= useful_path %>" method="get">
 						<label>
 							<%= radio_button_tag :family_risks, 'yes'%>
@@ -118,7 +122,6 @@
 		</div>
 	</div>
 </div>
-
 <script type="text/javascript">
 	if (localStorage) {
 		// LocalStorage is supported!
@@ -130,4 +133,3 @@
 		// No support. Use a fallback such as browser cookies or store on the server.
 	}
 </script>
-
