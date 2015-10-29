@@ -14,12 +14,28 @@
 //= require featherlight
 //= require featherlight-gallery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
 
 $(document).on('ready page:load', function () {
 	$('.trigger').on("click", function() {
 		$('body').toggleClass("mobile-nav");
+	});
+
+	$( "#dialog-message" ).hide();
+
+	$("#next-button").click(function(e) {     
+    if ($("input[class=check-box]:checked").val() == undefined){
+    	  e.preventDefault();
+			  $( "#dialog-message" ).show("fade");
+    } else {
+    	localStorage.setItem($("input[class=check-box]:checked").prop('name'), $("input[class=check-box]:checked").val());
+    }
+  });
+
+	$( ".modal-close" ).click(function() {
+	  $( "#dialog-message" ).hide('fade');
 	});
 });
 

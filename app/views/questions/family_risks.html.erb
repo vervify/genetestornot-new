@@ -1,3 +1,13 @@
+<div id="dialog-message">
+	<div class="panel warning-modal">
+		<div class="panel-header">Question has not been answered</div>
+		<div class="panel-body">
+				<p>Please select an answer before continuing.</p>
+				 <i class="fa fa-close modal-close"></i>
+		</div>
+	</div>
+</div>
+
 <div class="qnav">
 	<div class="row">
 		<div class="column">
@@ -99,38 +109,27 @@
 					<h1>
 						Does my family history put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people?
 					</h1>
-					<form action="<%= useful_path %>" method="get">
+					<form action="<%= useful_path %>" method="get" id="question_form">
 						<label>
-							<%= radio_button_tag :family_risks, 'yes'%>
+							<%= radio_button_tag( :family_risks, 'yes', checked = false, class: "check-box")%>
 							<span> My family history indicates I may have a higher risk of getting Alzheimer&rsquo;s Disease.	</span>
 						</label>
 						<label>
-							<%= radio_button_tag :family_risks, 'no'%>
+							<%= radio_button_tag( :family_risks, 'no', checked = false, class: "check-box")%>
 							<span> My family history does not indicate that I have a higher risk of getting Alzheimer&rsquo;s Disease.	</span>
 						</label>
 						<label>
-							<%= radio_button_tag :family_risks, 'unsure'%>
+							<%= radio_button_tag( :family_risks, 'unsure', checked = false, class: "check-box")%>
 							<span> I am unsure of my family history.	</span>
 						</label>
 						<label>
-							<%= radio_button_tag :family_risks, 'concerned'%>
+							<%= radio_button_tag( :family_risks, 'concerned', checked = false, class: "check-box")%>
 							<span> Regardless of my family history, I am very concerned about Alzheimer&rsquo;s Disease.	</span>
 						</label>
-						<div class="button-area"> <a href="<%= useful_path %>"><%= button_tag "Next" %></a> </div>
+						<div class="button-area"> <a href="<%= useful_path %>"><%= button_tag "Next", id: "next-button"%></a> </div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	if (localStorage) {
-		// LocalStorage is supported!
-		// save our user's answer to local storage
-		$( "button[type='submit']" ).click(function() {
-			localStorage.setItem('family', $('input:checked').val());
-		});
-	} else {
-		// No support. Use a fallback such as browser cookies or store on the server.
-	}
-</script>
