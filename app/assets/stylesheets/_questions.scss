@@ -2,10 +2,53 @@
 	background: #fafafa;
 	border-bottom:2px solid rgba(0, 0, 0, 0.1);
 	font-weight:400;
-	.qnav-container {
+	&-container {
 		display:table;
 	}
+	&-content {
+		height: 60px;
+		font-family:'Roboto';
+		font-weight: 500;
+		color: darken($purple, 20%);
+	}
+	&-hd {
+		float: left;
+		margin-top: 16px;
+	}
+	&-pg {
+		float: right;
+	}
 
+	.progress{
+		height: 25px; 
+	  width: 75px;
+	  float: left; /*Here you can also use display: inline-block instead of float:left*/
+		-webkit-border-radius: .2rem;
+		-moz-border-radius: .2rem;
+		border-radius: .2rem;
+		color:#fff;
+		font-size:1.1rem;
+		line-height: 1.35rem;
+		margin-left:1rem;
+		font-family:'Roboto';
+		font-weight: 500;
+		box-shadow:0 .2rem .2rem rgba(0, 0, 0, 0.2);
+		text-align: center;
+  	background-color: lighten($purple,20%);
+  	border: 1px solid darken($purple, 20%);
+
+	  &-current {
+	  background-color: $purple; 
+	  }
+
+	}
+
+}
+
+@media (max-width: 473px) {
+	.qnav-content {
+		height:100px;
+	}
 }
 // =================
 .instructions {
@@ -196,32 +239,61 @@
 }
 
 
-.progress{
-	height: 25px; 
-  width: 75px;
-  float: left; /*Here you can also use display: inline-block instead of float:left*/
-	-webkit-border-radius: .2rem;
-	-moz-border-radius: .2rem;
-	border-radius: .2rem;
-	color:#fff;
-	font-size:1.1rem;
-	line-height: 1.3rem;
-	margin-left:1rem;
-	font-family:'Roboto';
-	font-weight: 400;
-	box-shadow:0 .2rem .2rem rgba(0, 0, 0, 0.2);
-	text-align: center;
+#dialog-message {
+		position:fixed;
+    padding: 0;
+    margin: 0;
 
-  &-complete {
-	  background-color: $purple; 
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    width: 100%;
+    height: 100%;
+		background: RGBA(0,0,0,.5);
+
+		text-align: center;
+
+  .panel {
+  	position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+  	width:350px;
+		height:185px;
+  	background: white;
+  	-webkit-border-radius: .15rem;
+		-moz-border-radius: .15rem;
+		border-radius: .15rem;
+
+		p {
+			color: darken($purple, 30%);
+
+		}
   }
 
-  &-current {
+  .modal-close{
+		-webkit-border-radius: .15rem;
+		-moz-border-radius: .15rem;
+		border-radius: .15rem; 
+  	padding: 5px;
+  	background-color: lighten($purple, 40%);
+  	float: right;
+  	cursor: pointer;
   	border: 1px solid darken($purple, 20%);
-  	background-color: lighten($purple,20%);
-  }
-
-  &-incomplete {
-  	background-color: lighten($purple,20%);
   }
 }
+
+@media (max-width: 473px) {
+	#dialog-message{
+		.panel {
+			width: 280px;
+			height:155px;
+		}
+	}
+}
+
+

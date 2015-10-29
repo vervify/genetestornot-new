@@ -1,16 +1,27 @@
 <% vid_codes = {"Sharon" => "eejiicmg1m", "Mark" => "fu240cdjke", "Mallory" => "1la8ncjki1", "Jennifer" => "diazvcjdw6", "Abby & Carol" => "22i7pt4sav", "Michael & Richard" => "vx5fmfb3mq"} %>
+
+<div id="dialog-message">
+	<div class="panel warning-modal">
+		<div class="panel-header">Question has not been answered</div>
+		<div class="panel-body">
+				<p>Please select an answer before continuing.</p>
+				 <i class="fa fa-close modal-close"></i>
+		</div>
+	</div>
+</div>
+
 <div class="qnav">
 	<div class="row">
 		<div class="column">
 			<div class="qnav-content">
 				<div class="qnav-hd">
-					Question 1
+					Question 4
 				</div>
 				<div class="qnav-pg">
 					<div class="section-pro">
-						<div class="progress progress-complete">1</div>
-						<div class="progress progress-complete">2</div>
-						<div class="progress progress-complete">3</div>
+						<div class="progress">1</div>
+						<div class="progress">2</div>
+						<div class="progress">3</div>
 						<div class="progress progress-current">4</div>
 					</div>
 				</div>
@@ -119,39 +130,27 @@
 					</h1>
 					<form action="<%= results_path %>" method="get">
 						<label>
-							<%= radio_button_tag :pros_and_cons, 'yes'%>
+							<%= radio_button_tag( :pros_and_cons, 'yes', checked = false, class: "check-box")%>
 							<span>
 								I think the advantages outweigh the disadvantages for me.
 							</span>
 						</label>
 						<label>
-							<%= radio_button_tag :pros_and_cons, 'no'%>
+							<%= radio_button_tag( :pros_and_cons, 'no', checked = false, class: "check-box")%>
 							<span>
 								I think the disadvantages outweigh the advantages for me.
 							</span>
 						</label>
 						<label>
-							<%= radio_button_tag :pros_and_cons, 'unsure'%>
+							<%= radio_button_tag( :pros_and_cons, 'unsure', checked = false, class: "check-box")%>
 							<span>
 								I'm still not sure about the advantages and disadvantages for me.
 							</span>
 						</label>										
-						<div class="button-area"> <a href="<%= results_path %>"><%= button_tag "Next", :name => nil %></a> </div>
+						<div class="button-area"> <a href="<%= results_path %>"><%= button_tag "Next", id: "next-button"%></a> </div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
-<script type="text/javascript">
-	if (localStorage) {
-		// LocalStorage is supported!
-		// save our user's answer to local storage
-		$( "button[type='submit']" ).click(function() {
-			localStorage.setItem('pros', $('input:checked').val());
-		});
-	} else {
-		// No support. Use a fallback such as browser cookies or store on the server.
-	}
-</script>
