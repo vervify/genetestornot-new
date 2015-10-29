@@ -43,8 +43,8 @@
 	}
 	.logo {
 		display:table;
-		padding-top:3rem;
-		padding-bottom:2rem;
+		padding-top:0;
+		padding-bottom:1.5rem;
 		@media (min-width:$breakpoint) {
 		padding-top:1.5rem;
 		padding-bottom:1.5rem;
@@ -66,12 +66,22 @@
 	position:relative;
 	}
 	ul {
-		display:block;
+
+		display:table;
+		margin:auto;
+		@media (min-width:$breakpoint) {
 		position:absolute;
+
 		right:0;
 	}
+	}
 	li {
+		margin-left:1rem;
+		margin-right:1rem;
+		@media (min-width:$breakpoint) {
+			margin-right:0;
 		margin-left:2rem;
+	}
 	}
 	li a {
 		padding:.4rem 0 .6rem 0;
