@@ -1,7 +1,6 @@
 .chart-section {
-	
 	background:#fafafa;
-	border:.1rem  rgba(0, 0, 0, 0.2)   solid;
+	border:1px  rgba(0, 0, 0, 0.2)   solid;
 	margin-top:1.5rem;
 	margin-bottom:1.5rem;
 	-webkit-border-radius: 2px;
@@ -22,7 +21,7 @@
 	}
 	li {
 		padding:.8rem 2.5rem .8rem 2.5rem;
-		border-top:.08rem solid #eee;
+		border-top:1px solid #eee;
 		background:#fff;
 		&:first-child {
 			border-top:none;
@@ -30,7 +29,7 @@
 		@media (min-width:600px) {
 			padding-bottom:0;
 			display:table-cell;
-			border-right:.08rem solid #ddd;
+			border-right:1px solid #ddd;
 			border-top:none;
 			&:last-child {
 				border:none;
@@ -51,7 +50,6 @@
 		}
 	}
 }
-
 .chart-h2 {
 	b {
 		font-weight:500;
@@ -59,7 +57,7 @@
 	font-weight:500;
 	font-size:1.1rem;
 	text-align:center;
-	border-bottom:.08rem solid rgba(0, 0, 0, 0.2)   ;
+	border-bottom:1px solid rgba(0, 0, 0, 0.2)   ;
 	padding:.7rem 0;
 	padding-left:.5rem;
 	padding-right:.5rem;
@@ -74,18 +72,17 @@
 		margin-bottom:0;
 		border-bottom:0;
 		margin-top:0;
-		border-top:.08rem solid rgba(0, 0, 0, 0.2)   ;
+		border-top:1px solid rgba(0, 0, 0, 0.2)   ;
 		&:first-of-type {
-			border-top:.1rem solid rgba(0, 0, 0, 0.2)   ;
+			border-top:1px solid rgba(0, 0, 0, 0.2)   ;
 		}
 		&:last-of-type {
-			border-bottom:.1rem solid rgba(0, 0, 0, 0.2)   ;
+			border-bottom:1px solid rgba(0, 0, 0, 0.2)   ;
 		}
 		&:nth-of-type(2) {
 			-webkit-border-bottom: 0;
 			-moz-border-radius-top: 0;
 			border-radius-top: 0;
-			
 		}
 		&:nth-of-type(3) {
 			-webkit-border-top-right-radius: 0;
@@ -99,7 +96,6 @@
 	.chart-h2 {
 	}
 }
-
 .chart-segment {
 	display:inline-block;
 }

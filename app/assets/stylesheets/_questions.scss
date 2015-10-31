@@ -1,53 +1,101 @@
 .qnav {
-	background: #fafafa;
-	border-bottom:2px solid rgba(0, 0, 0, 0.1);
-	font-weight:400;
-	&-container {
-		display:table;
+	border-bottom:1px solid lighten($blue,30%);
+	padding-top:1.25rem;
+	padding-bottom:1.25rem;
+	background: transparentize($blue,.9);
+	color: darken($blue,10%);
+	font-size:1.1rem;
+	.qnav-hd {
+		font-weight:bold;
+		text-transform:uppercase;
+		margin-bottom:.2rem;
+		position:relative;
+		text-align:center;
+		@media (min-width:$breakpoint) {
+			margin-bottom:.6rem;
+			text-align:left;
+		}
 	}
-	&-content {
-		height: 60px;
-		font-family:'Roboto';
-		font-weight: 500;
-		color: darken($purple, 20%);
+	.qnav-body {
+		@include clearfix;
 	}
-	&-hd {
-		float: left;
-		margin-top: 16px;
-	}
-	&-pg {
-		float: right;
-	}
-
-	.progress{
-		height: 25px; 
-	  width: 75px;
-	  float: left; /*Here you can also use display: inline-block instead of float:left*/
-		-webkit-border-radius: .2rem;
-		-moz-border-radius: .2rem;
-		border-radius: .2rem;
-		color:#fff;
-		font-size:1.1rem;
-		line-height: 1.35rem;
-		margin-left:1rem;
-		font-family:'Roboto';
-		font-weight: 500;
-		box-shadow:0 .2rem .2rem rgba(0, 0, 0, 0.2);
-		text-align: center;
-  	background-color: lighten($purple,20%);
-  	border: 1px solid darken($purple, 20%);
-
-	  &-current {
-	  background-color: $purple; 
-	  }
-
-	}
-
-}
-
-@media (max-width: 473px) {
 	.qnav-content {
-		height:100px;
+		line-height: 1.3;
+		text-align:center;
+		@media (min-width:$breakpoint) {
+			text-align:left;
+		}
+		span {
+			display:inline-block;
+		}
+		a {
+			color:  darken($blue,10%);
+			font-weight:inherit;
+			padding-bottom:1px;
+			border-bottom:1px dashed $blue;
+			&:hover {
+				text-decoration:none;
+			}
+		}
+	}
+	.qnav-pg {
+		margin-bottom:1rem;
+		@media (min-width:$breakpoint) {
+			margin-bottom:0;
+			margin-left:1rem;
+			min-height:100px;
+			position:relative;
+			padding-left:1rem;
+			white-space:nowrap;
+			position:relative;
+			line-height:1.4;
+			&:before {
+				content:'';
+				position:absolute;
+				top:0;
+				left:0;
+				border-right:1px dotted lighten($blue,30%);
+				width:1px;
+				height:100%;
+			}
+		}
+		.qnav-hd {
+			@media (min-width:$breakpoint) {
+				padding-left:.3rem;
+			}
+		}
+		text-align:left;
+		@media (min-width:$breakpoint) {
+			float:right;
+		}
+		ul {
+			display:table;
+			margin:0 auto;
+			list-style-type:none;
+			padding:0;
+		}
+		li {
+			font-weight:600;
+			display:inline-block;
+			min-width:1.82rem;
+			margin-right:.5rem;
+			margin-left:.5rem;
+			@media (min-width:$breakpoint) {
+				min-width:1.72rem;
+				margin-right:.15rem;
+				margin-left:.15rem;
+			}
+			border:1px solid transparentize($blue,.2);
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			text-align:center;
+			&.progress-current {
+				border:1px solid darken($blue,10%);
+				background: darken($blue,10%);
+				color:#fff;
+			}
+		}
 	}
 }
 // =================
@@ -237,56 +285,45 @@
 		}
 	}
 }
-
-
 #dialog-message {
-		position:fixed;
-    padding: 0;
-    margin: 0;
-
-    top: 0;
-    left: 0;
-    z-index: 999;
-
-    width: 100%;
-    height: 100%;
-		background: RGBA(0,0,0,.5);
-
-		text-align: center;
-
-  .panel {
-  	position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    margin: auto;
-  	width:350px;
+	position:fixed;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background: RGBA(0,0,0,.5);
+	text-align: center;
+	.panel {
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width:350px;
 		height:185px;
-  	background: white;
-  	-webkit-border-radius: .15rem;
+		background: white;
+		-webkit-border-radius: .15rem;
 		-moz-border-radius: .15rem;
 		border-radius: .15rem;
-
 		p {
 			color: darken($purple, 30%);
-
 		}
-  }
-
-  .modal-close{
+	}
+	.modal-close{
 		-webkit-border-radius: .15rem;
 		-moz-border-radius: .15rem;
 		border-radius: .15rem; 
-  	padding: 5px;
-  	background-color: lighten($purple, 40%);
-  	float: right;
-  	cursor: pointer;
-  	border: 1px solid darken($purple, 20%);
-  }
+		padding: 5px;
+		background-color: lighten($purple, 40%);
+		float: right;
+		cursor: pointer;
+		border: 1px solid darken($purple, 20%);
+	}
 }
-
 @media (max-width: 473px) {
 	#dialog-message{
 		.panel {
@@ -295,5 +332,3 @@
 		}
 	}
 }
-
-
