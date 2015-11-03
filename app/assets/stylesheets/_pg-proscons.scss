@@ -46,7 +46,6 @@ p.quote-blue {
 		color: transparentize($blue,.5);
 	}
 }
-
 .section-pro, .section-con {
 	padding-top:1rem;
 	padding-bottom:1rem;
@@ -121,6 +120,7 @@ p.quote-blue {
 	}
 	h4 {
 		margin-top:.7rem;
+		margin-bottom:0;
 		color:darken($blue,10%);
 	}
 	.note {
@@ -143,15 +143,16 @@ p.quote-blue {
 		border-radius: .2rem;
 		display:inline-block;
 		background:inherit;
-		color:#fff;
 		font-weight:400;
-		padding:0 .5rem;
-		font-size:1.1rem;
-		margin-left:1rem;
-		font-family:'Roboto';
-		box-shadow:0 .2rem .2rem rgba(0, 0, 0, 0.2) ;
+		.section-pro & {
+			color:darken($purple,20%);
+		}
+		.section-con & {
+			color:darken($blue,20%);
+		}
 		&:before {
 			content:'\f144';
+			display:inline-block;
 			font-family:FontAwesome;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
@@ -159,26 +160,37 @@ p.quote-blue {
 		&:hover {
 			opacity:.8;
 			box-shadow:none;
-			text-decoration:none;
 		}
 	}
 }
-.play-video {
-	a {
-		background-image: linear-gradient(to right, $purple,  $blue);
+.procon-hd {
+	font-weight:bold;
+	font-size:1.4rem;
+	margin-bottom:.25rem;
+	.section-pro & {
+		color:darken($purple,20%);
+	}
+	.section-con & {
+		color:darken($blue,20%);
 	}
 }
-.section-pro  {
-	.play-video {
-		a {
-			background:$purple;
-		}
+.procon-blurb {
+	font-style:italic;
+	font-size:1.2rem;
+	margin-bottom:.5rem;
+	line-height:1.1;
+	padding-right:5.5rem;
+	@media (min-width:$breakpoint) {
+		padding-right:10rem;
+	}
+	.section-pro & {
+		color:darken($purple,20%);
+	}
+	.section-con & {
+		color:darken($blue,20%);
 	}
 }
-.section-con {
-	.play-video {
-		a {
-			background:$blue;
-		}
-	}
+
+.procon-intro {
+	min-height:127px;
 }
