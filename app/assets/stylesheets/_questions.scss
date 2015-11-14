@@ -139,6 +139,41 @@
 		}
 	}
 }
+
+.summary{
+	&:before {
+		content:'SUMMARY';
+	}
+}
+.conclusion{
+	&:before {
+		content:'CONCLUSION';
+	}
+}
+
+@media print {
+  .header {
+    display: none;
+  }
+  #jump {
+    display: none;
+  }
+  #print {
+    display: none;
+  }
+  footer ul{
+    display: none;
+  }
+  #section-to-print, #section-to-print * {
+    visibility: visible;
+  }
+  #section-to-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 .question {
 	-webkit-border-radius: .2rem;
 	-moz-border-radius: .2rem;
