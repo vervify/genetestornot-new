@@ -74,6 +74,12 @@ p.quote-blue {
 			max-width:12rem;
 			right:0;
 		}
+		@media (max-width:374px) {
+			max-width:8rem;
+			z-index:-1;
+			top:0;
+			right:-1rem;
+		}
 		position:absolute;
 	}
 	.note {
