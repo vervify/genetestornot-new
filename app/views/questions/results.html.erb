@@ -2,29 +2,57 @@
 	<div class="row">
 		<div class="column">
 
-			<h1>Your Results</h1>
-			<div class="instructions">
-				For your privacy and security the site does not save your information on the site. If you need more time to review the questions, you are welcome to return at any time.
+			<h1>Making your decision - Should you get tested?</h1>
+
+			<div class="instructions summary">
+				Below we have included your answers to each question in this decision aid as well as a summary of the main issues related to each question.<a id="jump" href="#conclusion"> Jump to your conclusion</a>.
 			</div>
-			<h1>Does my <strong>family history</strong> put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people?</h1>
+
+			<h2 class="purple">Family Risks?</h3>
+			<h5 class="purple">If a member of your immediate family (parents or siblings) has been diagnosed with late-onset Alzheimer’s disease, you may have an increased risk of developing Alzheimer’s disease. In this section you explored your family history.</h5>
 			<h3>You answered: <strong id="family"></strong></h3>
 			<br>
-			<h1>Will the genetic test give me <strong>useful information</strong>?</h1>
+			<h2 class="purple">Useful Info?</h3>
+			<h5 class="purple">The gene test for late-onset Alzheimer’s disease can reveal an increased risk of getting the disease, but it cannot give you a definitive answer whether you will or won’t develop it. This section discussed how much increased risk you might have if you have inherited one or two copies of the APOE e4 gene. However, many people with the APOE e4 gene will not get Alzheimer’s disease, and people without the gene can develop it.</h5>
 			<h3>You answered: <strong id="useful"></strong></h3>
 			<br>
-			<h1><strong>Is this the right time in my life</strong> to take this&nbsp;test?</h1>
+			<h2 class="purple">Is Timing Right?</h3>
+			<h5 class="purple">Timing of genetic testing is important. It is best done when things are calm enough in your life so you have time to think it through.</h5>
 			<h3>You answered: <strong id="timing"></strong></h3>
 			<br>
-			<h1>Will the <strong>advantages</strong> outweigh the <strong>disadvantages</strong>?</h1>
+			<h2 class="purple">Pros vs Cons??</h2>
+			<h5 class="purple">Genetic information has personal, family and societal consequences. In this section we presented stories to explore a number of advantages and disadvantages that might affect your decision whether or not to get gene testing. </h5>
 			<h3>You answered: <strong id="pros"></strong></h3>
+
+			<div id="conclusion" class="instructions conclusion">
+			</div>
+
+			<p class="purple">Thank you for using this online decision tool. Additional sources of information to help you with your choice can be found in the <%= link_to "Further Resources", further_resources_path %> section of this website.</p>
+
+			<p class="purple">The cost for the APOE gene test currently ranges from $100 to about $400, depending on the laboratory. For greatest accuracy, genetic testing should be done by a CLIA-certified* laboratory.</p>
+
+			<h5 class="purple">*CLIA Certified Laboratory: a laboratory that meets the regulations put forth by the Clinical Laboratory Improvement Amendments of 1988. You can find out the CLIA certification status of a laboratory on the U.S. Centers for Disease Control and Prevention (CDC) CLIA <%= link_to "web pages", "http://wwwn.cdc.gov/clia/Resources/LabSearch.aspx", target: 'blank' %>.</h5>
+
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
 	$(function(){
-		$('#family').html(localStorage.getItem('family_risks'));
-		$('#useful').html(localStorage.getItem('useful'));
-		$('#timing').html(localStorage.getItem('timing'));
-		$('#pros').html(localStorage.getItem('pros_and_cons'));
+		var family = localStorage.getItem('family_risks');
+		var useful = localStorage.getItem('useful');
+		var timing = localStorage.getItem('timing');
+		var pros = localStorage.getItem('pros_and_cons');
+
+		$('#family').html(family);
+		$('#useful').html(useful);
+		$('#timing').html(timing);
+		$('#pros').html(pros);
+
+		if((family === 'yes' || family === 'unsure' || family === 'concerned') && (useful === 'yes' || useful === 'unsure') && (timing === 'yes' || timing === 'unsure') && (pros === 'yes' || pros === 'unsure')) {
+			$('#conclusion').html("Based on your answers, none of the issues considered here indicate barriers to APOE genetic testing. However, factors unique to you and your family also need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <span id='print'>This page can be <a href='#' onclick='window.print();return false;'>printed</a> for you to take with you and to use as a basis for further discussions.</span>");
+		} else {
+			$('#conclusion').html("Based on your answers, concerns exist that are barriers to you for APOE testing. In addition, other factors unique to you and your family need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <span id='print'>This page can be <a href='#' onclick='window.print();return false;'>printed</a> for you to take with you and to use as a basis for further discussions.</span>");
+		}
+
 	});
 </script>
