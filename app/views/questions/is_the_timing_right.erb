@@ -15,10 +15,10 @@
 				<div class="qnav-pg">
 					<div class="qnav-hd"> Question #: </div>
 					<ul>
-						<li class="progress">1</li>
-						<li class="progress">2</li>
-						<li class="progress progress-current">3</li>
-						<li class="progress">4</li>
+						<li id="family-link" class="progress"><a href="/family_risks">1</a></li>
+						<li id="useful-link" class="progress"><a href="/is_the_information_useful">2</a></li>
+						<li id="timing-link" class="progress progress-current"><span>3</span></li>
+						<li id="pros-link" class="progress"><span>4</span></li>
 					</ul>
 				</div>
 				<div class="qnav-inst">
@@ -79,3 +79,13 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	$(function(){
+		
+		if (localStorage.getItem('timing') !== null && localStorage.getItem('timing') !== 'null'){
+			$('#pros-link').html('<a href="/pros_and_cons">4</a>')
+			$('input[name="timing"][value=' + localStorage.getItem('timing') + ']').prop('checked', 'checked'); 
+		}
+
+	});
+</script>

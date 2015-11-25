@@ -32,7 +32,25 @@
 			<p class="purple">The cost for the APOE gene test currently ranges from $100 to about $400, depending on the laboratory. For greatest accuracy, genetic testing should be done by a CLIA-certified* laboratory.</p>
 
 			<h5 class="purple">*CLIA Certified Laboratory: a laboratory that meets the regulations put forth by the Clinical Laboratory Improvement Amendments of 1988. You can find out the CLIA certification status of a laboratory on the U.S. Centers for Disease Control and Prevention (CDC) CLIA <%= link_to "web pages", "http://wwwn.cdc.gov/clia/Resources/LabSearch.aspx", target: 'blank' %>.</h5>
-
+			<a name="question"></a>
+			<hr />
+			<div class="question">
+				<div class="question-header">
+					Get Results for Someone Else:
+				</div>
+				<div class="question-body">
+					<h1>
+						Is there someone else that wants to consider the 4 questions on this computer? Check the box below to clear all answers and begin again.
+					</h1>
+					<form action="<%= root_path %>" method="get" id="question_form">
+						<label>
+							<%= radio_button_tag( :clear_answers, 'concerned', checked = false, class: "check-box")%>
+							<span> Clear all my answers and continue back to the beginning.	</span>
+						</label>
+						<div class="button-area"><a href="<%= root_path %>"><%= button_tag "Begin", id: "next-button"%></a> </div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -53,6 +71,13 @@
 		} else {
 			$('#conclusion').html("Based on your answers, concerns exist that are barriers to you for APOE testing. In addition, other factors unique to you and your family need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <span id='print'>This page can be <a href='#' onclick='window.print();return false;'>printed</a> for you to take with you and to use as a basis for further discussions.</span>");
 		}
+
+		$('#next-button').click(function(){
+			localStorage.setItem('family_risks', null);
+			localStorage.setItem('useful', null);
+			localStorage.setItem('timing', null);
+			localStorage.setItem('pros_and_cons', null);
+		})
 
 	});
 </script>
