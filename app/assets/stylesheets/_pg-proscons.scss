@@ -30,7 +30,8 @@ p.quote {
 }
 p.quote-purple { 
 	color:darken($purple,20%);
-	background:linear-gradient(to left,transparentize($purple,.75), transparentize($purple,.85) ) ;
+				@include linear-gradient("to left", transparentize($purple,.75), transparentize($purple,.85));
+
 	box-shadow:0 0 2rem #fff inset;
 	&:before,
 	&:after {
@@ -39,7 +40,8 @@ p.quote-purple {
 }
 p.quote-blue { 
 	color:darken($blue,20%);
-	background:linear-gradient(to left,transparentize($blue,.85), transparentize($blue,.75) ) ;
+					@include linear-gradient("to left", transparentize($blue,.85), transparentize($blue,.75));
+
 	box-shadow:0 0 2rem #fff inset;
 	&:before,
 	&:after {

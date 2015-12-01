@@ -179,7 +179,8 @@ hr {
 		width:100%;
 		left:0;
 		height: 1px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), transparentize(#000,.8), rgba(0, 0, 0, 0));
+			@include linear-gradient("to right", rgba(0, 0, 0, 0), transparentize(#000,.8), rgba(0, 0, 0, 0));
+
 	}
 }
 dl {

@@ -187,7 +187,7 @@ $bodywidth-wide:69rem;
 			-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
 			border-radius: 2px;
-			background: linear-gradient(to top, #fafafa, #eee);
+			@include linear-gradient("to top", #fafafa, #eee);
 			box-shadow:0 1px 6px rgba(0, 0, 0, 0.2) inset ;
 		}
 		td:first-child {
@@ -233,7 +233,8 @@ $bodywidth-wide:69rem;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
-		background: linear-gradient(to top, $purple, $blue);
+					@include linear-gradient("to top", $purple, $blue);
+
 		white-space:nowrap;
 	}
 	.general {
@@ -444,7 +445,8 @@ $bodywidth-wide:69rem;
 			-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
 			border-radius: 2px;
-			background: linear-gradient(to top, #fafafa, #eee);
+						@include linear-gradient("to top", #fafafa, #eee);
+
 			box-shadow:0 1px 6px rgba(0, 0, 0, 0.2) inset ;
 		}
 		td:first-child {
@@ -490,7 +492,8 @@ $bodywidth-wide:69rem;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
-		background: linear-gradient(to top, $purple, $blue);
+					@include linear-gradient("to top", $purple, $blue);
+
 		white-space:nowrap;
 	}
 	.general {
