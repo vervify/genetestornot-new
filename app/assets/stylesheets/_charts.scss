@@ -233,7 +233,7 @@ $bodywidth-wide:69rem;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
-					@include linear-gradient("to top", $purple, $blue);
+					@include linear-gradient("to top", $purple, $purple);
 
 		white-space:nowrap;
 	}
@@ -280,7 +280,7 @@ $bodywidth-wide:69rem;
 	}
 	.with-1-copy {
 		.age-65 {
-			height:12%;
+			height:7.5%;
 			&:before {
 				content:'5-10%';
 				font-weight:bold;
@@ -492,7 +492,7 @@ $bodywidth-wide:69rem;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
-					@include linear-gradient("to top", $purple, $blue);
+					@include linear-gradient("to top", $purple, $purple);
 
 		white-space:nowrap;
 	}
