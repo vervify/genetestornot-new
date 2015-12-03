@@ -41,13 +41,16 @@
 			<h3>Probability of having Alzheimer&rsquo;s disease (or not) by ages <span class="segment"> 70 
 					and 85.
 			</span>  </h3>
-			<p>The purple parts of each bar show the chance of developing Alzheimer&rsquo;s
-				<br>
-				The gray parts of each bar show the chance of not developing Alzheimer&rsquo;s</p>
+			<ul class="legend">
+				<li class="legend-purple">
+					The purple parts of each bar show the chance of developing Alzheimer&rsquo;s
+				</li>
+				<li class="legend-gray">
+					The gray parts of each bar show the chance of not developing Alzheimer&rsquo;s
+				</li>
+			</ul>
 		</div>
 	</div>
-
-
 	<div class="chart-family">
 		<div class="column">
 			<ul>
@@ -88,16 +91,12 @@
 			</ul>
 		</div>
 	</div>
-
 	<div class="row">
 		<div class="column">
-	
-
 			<h3>
 				A family history of Alzheimer&rsquo;s may increase your&nbsp;risk
 			</h3>
 			<p>If any of your parents, brothers or sisters have been diagnosed with Alzheimer&rsquo;s disease, your chance of developing this disorder increases by as much as two or three times.</p>
-			
 			<hr />
 			<div class="panel">
 				<div class="panel-header">Limitations to what you can <span class="segment">
@@ -156,19 +155,15 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		
 		if (localStorage.getItem('family_risks') !== null && localStorage.getItem('family_risks') !== 'null'){
 			$('#useful-link').html('<a href="/is_the_information_useful">2</a>')
-			$('input[name="family_risks"][value=' + localStorage.getItem('family_risks') + ']').prop('checked', 'checked'); 
+				$('input[name="family_risks"][value=' + localStorage.getItem('family_risks') + ']').prop('checked', 'checked'); 
 		}
-		
 		if (localStorage.getItem('useful') !== null && localStorage.getItem('useful') !== 'null'){
 			$('#timing-link').html('<a href="/is_the_timing_right">3</a>')
 		}
-
 		if (localStorage.getItem('timing') !== null && localStorage.getItem('timing') !== 'null'){
 			$('#pros-link').html('<a href="/pros_and_cons">4</a>')
 		}
-
 	});
 </script>

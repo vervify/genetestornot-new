@@ -187,11 +187,7 @@
 #conclusion{
 	text-align: left;
 }
-.conclusion{
-	&:before {
-		content:'CONCLUSION';
-	}
-}
+
 @media print {
 	.header {
 		display: none;
@@ -407,3 +403,38 @@
 		}
 	}
 }
+
+.print-this-page {
+	margin-top:1rem;
+	margin-bottom:1rem;
+}
+.print-button {
+    font-weight: 600;
+    min-width: 7rem;
+    color: #fff;
+    display: inline-block;
+    margin-right: 1rem;
+    background-color: rgba(13, 166, 242, 0.95);
+    border: none;
+    box-shadow: 0 0.05rem 0 rgba(10, 133, 194, 0.95);
+    -webkit-border-radius: .15rem;
+    -moz-border-radius: .15rem;
+    border-radius: .15rem;
+	a {
+    padding: .4rem ;
+		display:block;
+		color:#fff;
+		&:hover {
+			text-decoration:none;
+		}
+	}
+		&:hover {
+			background-color: darken($blue,10%);
+		}
+		&.active {
+			background-color: darken($blue,10%);
+			box-shadow: 0 .2rem darken($blue,20%);
+		}
+	
+}
+

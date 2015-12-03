@@ -44,11 +44,16 @@
 			<p>The APOE gene has three forms: e2, e3, and e4. The e4 form is the one which is associated with a higher risk of Alzheimer&rsquo;s disease. The genetic test can tell which form or forms of the gene are present. A person can have zero, one or two e4 genes.</p>
 			<p>If you have one copy of the e4 gene, the risk for developing Alzheimer&rsquo;s disease increases and two copies makes the risk higher. Research is ongoing so we don&rsquo;t know the exact increased risk but currently, it is estimated to be as shown in the figures below.</p>
 			<h2>Risk of Developing Alzheimer&rsquo;s Disease</h2>
-			<p>The percentages and the blue parts of each bar indicate the chance of developing Alzheimer&rsquo;s by ages 65, 75 and 85 based on the number of APOE e4 genes. The gray parts of each bar indicate the chance of not developing Alzheimer&rsquo;s.</p>
+			<ul class="legend">
+				<li class="legend-purple">
+					The percentages and the purple parts of each bar indicate the chance of developing Alzheimer&rsquo;s by ages 65, 75 and 85 based on the number of APOE e4 genes. 
+				</li>
+				<li class="legend-gray">
+					The gray parts of each bar indicate the chance of not developing Alzheimer&rsquo;s.
+				</li>
+			</ul>
 		</div>
 	</div>
-
-
 	<div class="chart-risk">
 		<div class="column">
 			<ul>
@@ -112,10 +117,8 @@
 			</ul>
 		</div>
 	</div>
-
 	<div class="row">
 		<div class="column">
-	
 			<div class="caption">
 				Studies vary and these numbers are estimates. Women tend to be at the higher end of the ranges given. Preliminary studies of African Americans suggest that their risk is somewhat higher.
 			</div>
@@ -173,15 +176,12 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		
 		if (localStorage.getItem('useful') !== null && localStorage.getItem('useful') !== 'null'){
 			$('#timing-link').html('<a href="/is_the_timing_right">3</a>')
-			$('input[name="useful"][value=' + localStorage.getItem('useful') + ']').prop('checked', 'checked'); 
+				$('input[name="useful"][value=' + localStorage.getItem('useful') + ']').prop('checked', 'checked'); 
 		}
-
 		if (localStorage.getItem('timing') !== null && localStorage.getItem('timing') !== 'null'){
 			$('#pros-link').html('<a href="/pros_and_cons">4</a>')
 		}
-
 	});
 </script>
