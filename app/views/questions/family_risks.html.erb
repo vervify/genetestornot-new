@@ -8,28 +8,37 @@
 	</div>
 </div>
 <div class="qnav">
-	<div class="row">
-		<div class="column">
-			<div class="qnav-body">
-				<div class="qnav-pg">
-					<div class="qnav-hd"> Question #: </div>
-					<ul>
-						<li id="family-link" class="progress progress-current"><span>1</span></li>
-						<li id="useful-link" class="progress"><span>2</span></li>
-						<li id="timing-link" class="progress"><span>3</span></li>
-						<li id="pros-link" class="progress"><span>4</span></li>
-					</ul>
-				</div>
-				<div class="qnav-inst">
-					<div class="qnav-hd">Instructions:</div>
-					<div class="qnav-content">
-						First, fully consider the information below. 
-						<span>Then, at the end,</span> submit your answer.
-					</div>
-				</div>
-			</div>
+	<div class="qnav-questions">
+		<div class="qnav-label">Questions</div>
+		<div class="qnav-numbers">
+			<ul>
+				<li id="family-link" class="progress progress-current"><span>1</span></li>
+				<li id="useful-link" class="progress"><span>2</span></li>
+				<li id="timing-link" class="progress"><span>3</span></li>
+				<li id="pros-link" class="progress"><span>4</span></li>
+				<li id="my-results" class="my-results"><a href="">My Results</a></li>
+			</ul>
 		</div>
 	</div>
+</div>
+<div class="qnav-inst">
+<div class="row">
+	<div class="column">
+		<div class="panel">
+		<div class="qnav-hd panel-header">Instructions:</div>
+		<div class="qnav-content panel-body">
+			<ul>
+				<li>
+					First, fully consider the information below. 
+				</li>
+				<li>
+					Then, at the end, submit your answer.
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</div>
 </div>
 <div class="familyriskspage">
 	<div class="row">
@@ -38,9 +47,7 @@
 			<p>Genetic testing is usually considered when a person might be at higher risk for a particular condition. Here we help you explore whether you may be at greater risk of getting late-onset Alzheimer&rsquo;s Disease, the form which affects older people, based on your family history.</p>
 			<h2>Everyone is at risk</h2>
 			<p>On average about 1 out of every 100 people will develop Alzheimer&rsquo;s by the time they turn 70. By 85, the risk is about 10 out of every 100 people.</p>
-			<h3>Probability of having Alzheimer&rsquo;s disease (or not) by ages <span class="segment"> 70 
-					and 85.
-			</span>  </h3>
+			<h3>Probability of having Alzheimer&rsquo;s disease (or not) by ages <span class="segment"> 70 and 85.</span> </h3>
 			<ul class="legend">
 				<li class="legend-purple">
 					The purple parts of each bar show the chance of developing Alzheimer&rsquo;s
@@ -97,7 +104,6 @@
 				A family history of Alzheimer&rsquo;s may increase your&nbsp;risk
 			</h3>
 			<p>If any of your parents, brothers or sisters have been diagnosed with Alzheimer&rsquo;s disease, your chance of developing this disorder increases by as much as two or three times.</p>
-			<hr />
 			<div class="panel">
 				<div class="panel-header">Limitations to what you can <span class="segment">
 						learn from family history:
@@ -119,7 +125,6 @@
 			<p class="further-resources-link">
 				<%= link_to "Further Resources about Family History", further_resources_path(anchor: "family-history"), target: "blank" %>
 			</p>
-			<hr />
 			<div class="question">
 				<div class="question-header">
 					Submit Your Answer Below:

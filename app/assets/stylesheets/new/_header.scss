@@ -1,0 +1,30 @@
+.header {
+	@include linear-gradient("to bottom", hsla(200, 90%, 50%, .95), hsla(280, 40%, 50%, .9));
+	ul {
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		@include clearfix;
+		@include header-tabs;
+	}	
+	.logo {
+		display:table;
+		padding-top:0;
+		padding-bottom:1.5rem;
+
+		padding-top:1.5rem;
+		@media (max-width:$breakpoint) {
+			padding-top:2rem;
+		}
+
+	}
+	.logo a {
+		background: url('logo_white.png') 0 0 no-repeat;
+		background-size:contain;
+		display:block;
+		height:6rem;
+		width:16em;
+		position:relative;
+		z-index:4;
+	}
+}

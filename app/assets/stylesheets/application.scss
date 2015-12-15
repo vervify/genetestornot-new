@@ -25,24 +25,27 @@
 @import "susy";
 @import "normalize-rails";
 @import "font-awesome";
-@import "variables";
-@import "mixins";
+
+// @import "previous/variables";
+// @import "previous/mixins";
+// @import "previous/general";
+// @import "previous/nav";
+// @import "previous/footer";
+// @import "previous/questions";
+// @import "previous/charts";
+// @import "previous/pg-home";
+// @import "previous/pg-proscons";
+// @import "previous/pg-resources";
 
 
-
-@import "general";
-@import "nav";
-
-@import "footer";
-
-@import "questions";
-@import "charts";
-
-@import "pg-home";
-
-@import "pg-proscons";
-@import "pg-resources";
-
+@import "new/variables";
+@import "new/mixins";
+@import "new/mixins-charts";
+@import "new/mixins-questions";
+@import "new/general";
+@import "new/header";
+@import "new/footer";
+@import "new/homepage";
 
 
 

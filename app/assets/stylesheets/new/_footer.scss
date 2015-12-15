@@ -1,0 +1,40 @@
+footer {
+	border-top:2px solid rgba(0, 0, 0, 0.1);
+	padding:1rem;
+	background:#fafafa;
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+		background:#fff;
+	}
+	ul {
+		list-style-type:none;
+		padding:0;
+		margin:0;
+		@include clearfix;
+		padding-right:120px;
+		position:relative;
+		.vt-logo {
+			position:absolute;
+			max-width: 110px;
+			top:4px;
+			@media(min-width:780px) {
+				top:-4px;
+			}
+			right:-20px;
+		}
+	}
+	p {
+		@include font-footer2;
+
+	}
+	li {
+		@include font-footer1;
+		@media (min-width:780px) {
+			float:left;
+			a {
+				display:block;
+				margin-right:1.2rem;
+			}
+		}
+	}
+
+}

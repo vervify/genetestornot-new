@@ -9,28 +9,38 @@
 </div>
 
 <div class="qnav">
-	<div class="row">
-		<div class="column">
-			<div class="qnav-body">
-				<div class="qnav-pg">
-					<div class="qnav-hd"> Question #: </div>
-					<ul>
-						<li id="family-link" class="progress"><a href="/family_risks">1</a></li>
-						<li id="useful-link" class="progress"><a href="/is_the_information_useful">2</a></li>
-						<li id="timing-link" class="progress progress-current"><span>3</span></li>
-						<li id="pros-link" class="progress"><span>4</span></li>
-					</ul>
-				</div>
-				<div class="qnav-inst">
-					<div class="qnav-hd">Instructions:</div>
-					<div class="qnav-content">
-						First, fully consider the information below. 
-						 <span>Then, at the end,</span> submit your answer.
-					</div>
-				</div>
-			</div>
+	<div class="qnav-questions">
+		<div class="qnav-label"> Questions </div>
+		<div class="qnav-numbers">
+			<ul>
+				<li id="family-link" class="progress"><a href="/family_risks">1</a></li>
+				<li id="useful-link" class="progress"><a href="/is_the_information_useful">2</a></li>
+				<li id="timing-link" class="progress progress-current"><span>3</span></li>
+				<li id="pros-link" class="progress"><span>4</span></li>
+				<li id="my-results" class="my-results"><a href="">My Results</a></li>
+				
+			</ul>
 		</div>
 	</div>
+</div>
+<div class="qnav-inst">
+<div class="row">
+	<div class="column">
+		<div class="panel">
+		<div class="qnav-hd panel-header">Instructions:</div>
+		<div class="qnav-content panel-body">
+			<ul>
+				<li>
+					First, fully consider the information below. 
+				</li>
+				<li>
+					Then, at the end, submit your answer.
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</div>
 </div>
 <div class="timingpage">
 	<div class="row">
@@ -46,7 +56,6 @@
 			<p class="further-resources-link">
 				<%= link_to "Further Resources to Consider Timing of Genetic Testing", further_resources_path(anchor: "timing"), target: "blank" %>
 			</p>
-			<hr />
 			<div class="question">
 				<div class="question-header">
 					Submit Your Answer Below:

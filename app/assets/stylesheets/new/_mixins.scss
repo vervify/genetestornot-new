@@ -1,0 +1,582 @@
+// Border radius shorthand
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+}
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+@mixin linear-gradient($angle, $color-stops...) {
+	$_angle-with-vendor-prefix: "";
+	$_angle: "";
+	@if $angle == "to top" or $angle == "bottom" {
+		$_angle-with-vendor-prefix: bottom;
+		$_angle: to top;
+	} @else if $angle == "to right" or $angle == "left" {
+		$_angle-with-vendor-prefix: left;
+		$_angle: to right;
+	} @else if $angle == "to bottom" or $angle == "top" {
+		$_angle-with-vendor-prefix: top;
+		$_angle: to bottom;
+	} @else if $angle == "to left" or $angle == "right" {
+		$_angle-with-vendor-prefix: right;
+		$_angle: to left;
+	} @else if $angle == "to top right" or $angle == "bottom left" {
+		$_angle-with-vendor-prefix: bottom left;
+		$_angle: to top right;
+	} @else if $angle == "to bottom right" or $angle == "top left" {
+		$_angle-with-vendor-prefix: top left;
+		$_angle: to bottom right;
+	} @else if $angle == "to bottom left" or $angle == "top right" {
+		$_angle-with-vendor-prefix: top right;
+		$_angle: to bottom left;
+	} @else if $angle == "to top left" or $angle == "bottom right" {
+		$_angle-with-vendor-prefix: bottom right;
+		$_angle: to top left;
+	} @else {
+		$_angle-with-vendor-prefix: $angle % 360;
+		$_angle: (90 - $angle) % 360;
+	}
+	background: -webkit-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+	background: -moz-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+	background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+	background: linear-gradient($_angle, $color-stops);
+}
+// flex
+@mixin flex-direction-column {
+	flex-direction: column;
+	display: flex;
+	min-height: 100vh;
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+		display:block;
+	}
+	.main-content {
+		flex:1;
+	}
+}
+// misc objects
+@mixin home-button {
+	margin-top:1.5rem;
+	margin-bottom:1.5rem;
+	a {
+		font-size: 1.2rem;
+		font-weight: 600;
+		text-decoration:none;
+		display: inline-block;
+		margin: auto;
+		padding: .6rem 1rem;
+		text-align: center;
+		color: #fff;
+		border: none;
+		-webkit-border-radius: .15rem;
+		-moz-border-radius: .15rem;
+		border-radius: .15rem;
+		background: $purple;
+		box-shadow: 0 .3rem .8rem transparentize($purple,.4) ;
+		@include font-lato;
+		@media (min-width:$breakpoint) {
+			width:auto;
+		}
+		&:after {
+			content:'\f105';
+			padding-left:.5rem;
+			@include font-awesome;
+		}
+		&:hover {
+			box-shadow: 0 .3rem .8rem transparentize($blue,.4) ;
+			background: $blue;
+			-webkit-transition: all .2s;
+			transition: all .2s;
+			text-decoration:none;
+		}
+	}
+}
+@mixin button-small {
+	float:right; 
+	font-weight:600;
+	padding:.4rem;
+	min-width:7rem;
+	color: #fff;
+	display:block;
+	@include font-lato;
+	margin-right:1rem;
+	border: none;
+	@include border-radius(.15rem);
+	&:after {
+		content:'\f105';
+		padding-left:.5rem;
+		@include font-awesome;
+	}
+}
+@mixin button-print {
+	background:#999;
+	padding:.4rem .8rem;
+	text-decoration:none;
+	color: #fff;
+	display:block;
+	@include font-lato;
+	border: none;
+	@include border-radius(.15rem);
+	&:before {
+		padding-right:.3rem;
+		content:'\f02f';
+		@include font-awesome;
+	}
+	&:hover {
+		background:#666;
+	}
+}
+@mixin button-form {
+	@include button-small;
+	background-color: $blue;
+	box-shadow: 0 .05rem 0 darken($blue,10%);
+	&:hover {
+		background-color: darken($blue,10%);
+	}
+	&:active {
+		background-color: darken($blue,10%);
+		box-shadow: 0 .2rem darken($blue,20%);
+	}
+}
+@mixin hr-elegant {
+	content:'';
+	left:0;
+	position:absolute;
+	width:100%;
+	height: 1px;
+	@include linear-gradient("to right", rgba(0, 0, 0, 0), transparentize(#000,.8), rgba(0, 0, 0, 0));
+}
+// links
+@mixin link-default {
+	a {
+		color: $link-color;
+		text-decoration:none;
+		&:hover {
+			text-decoration:underline;
+		}
+	}
+}
+@mixin link-ref {
+	margin-top:2rem;
+	margin-bottom:2rem;
+	text-align:center;
+	@include lineheight-list;
+	@include font-roboto;
+	@include link-default;
+	font-size:1.1rem;
+	@media (max-width:$breakpoint) {
+		margin:2rem auto;
+		max-width:300px;
+	}
+	a {
+		font-weight:400;
+		&:after {
+			@include font-awesome;
+			padding-left:5px;
+			display:inline-block;
+			font-size:18px;
+			content:'\f105';
+		}
+	}
+}
+//
+// fonts and text
+//
+@mixin textcolor-default {
+	color: rgba(0, 0, 0, 0.75);
+}	
+@mixin textcolor-blue {
+	color: $blue;
+}	
+@mixin textcolor-purple {
+	color: $dark-purple;
+}	
+@mixin lineheight-default {
+	line-height:1.6;
+}
+@mixin lineheight-list {
+	line-height:1.5;
+}
+@mixin lineheight-hd {
+	line-height:1.3;
+}
+@mixin text-smoothing {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: "liga" on;
+}
+@mixin font-awesome {
+	@include text-smoothing;
+	font-family:FontAwesome;
+}
+@mixin font-roboto {
+	font-family:'Roboto Condensed', sans-serif;
+}
+@mixin font-lato {
+	font-family:'Lato', sans-serif;
+}
+//
+// ASSIGNMENTS
+//
+@mixin header-tabs {
+	margin:auto;
+	font-weight:400;
+	font-size:1.2rem;
+	float:right;
+	@media (max-width:$breakpoint) {
+		position:absolute;
+		right:0;
+	}
+	@include clearfix;
+	@include text-smoothing;
+	@include font-roboto;
+	li {
+		float:left;
+		margin-left:1rem;
+		margin-right:1rem;
+		@media (min-width:$breakpoint) {
+			margin-right:0;
+			margin-left:2rem;
+		}
+		a {
+			display:block;
+			padding:.4rem 0 .6rem 0;
+			position:relative;
+			text-decoration:none;
+			color:#fff;
+			font-weight:500;
+			&:hover {
+				text-decoration:none;
+				&:before {
+					content:'';
+					background: rgba(0, 0, 0, 0.1);
+					height:100%;
+					width:100%;
+					position:absolute;
+					left:0;
+					top:0;
+					box-shadow:-10px 0 0 rgba(0, 0, 0, 0.1), 10px 0 0 rgba(0, 0, 0, 0.1) ;
+				}
+				&:after {
+					content:'';
+					height:4px;
+					background:#fff;
+					position:absolute;
+					width:100%;
+					bottom:0;
+					left:0;
+				}
+			}
+		}
+	}
+}
+
+@mixin font-home1 {
+	@include textcolor-purple;
+	@include font-lato;
+	@include lineheight-hd;
+	font-size:1.3rem;
+	font-weight:600;
+}
+@mixin font-home2 {
+	@include lineheight-hd;
+	@include textcolor-default;
+	@include font-lato;
+	font-size:1.1rem;
+}
+@mixin font-footer1 {
+	@include link-default;
+	@include font-roboto;
+	font-weight:400;
+}
+@mixin font-footer2 {
+	@include font-lato;
+	@include textcolor-default;
+	font-weight:400;
+	font-size:.8rem;
+}
+@mixin h1 {
+	font-size:1.8rem;
+	letter-spacing:-.02rem;
+	@include lineheight-hd;
+}
+@mixin h2 {
+	font-size: 1.4rem;
+	@include lineheight-hd;
+}
+@mixin h3 {
+	font-size: 1.17rem;
+	@include lineheight-hd;
+}
+@mixin question-h1 {
+	@include h1;
+	@include textcolor-purple;
+	@include font-lato;
+}
+@mixin question-h2 {
+	@include h2;
+	@include textcolor-purple;
+	@include font-lato;
+}
+@mixin question-h3 {
+	font-style:italic;
+	@include h3;
+	@include textcolor-purple;
+	@include font-lato;
+}
+@mixin text-chart-axis {
+	@include font-lato;
+	font-size:1rem;
+}
+@mixin text-chart-heads {
+	@include font-lato;
+	font-size:1.1rem;
+	line-height:1.1;
+}
+@mixin para-default {
+	@include lineheight-default;
+	@include font-lato;
+	@include textcolor-default;
+	@include text-smoothing;
+	font-weight:inherit;
+}
+@mixin caption {
+	@include para-default;
+}
+@mixin font-legend {
+	@include font-lato;
+	@include textcolor-default;
+	@include lineheight-default;
+}
+@mixin hr {
+	margin-top:2rem;
+	margin-bottom:2rem;
+	border: 0;
+	height: 1px;
+	background:transparent;
+	&:before {
+		@include hr-elegant;
+	}
+}
+@mixin list-default {
+	ul {
+		margin-left:0;
+		list-style-type:none;
+		padding-left:1rem;
+		padding-top:.2rem;
+		@include font-lato;
+		@include lineheight-list;
+		li {
+			&:before {
+				content:'\25A0';
+				font-family:arial,sans-serif;
+				font-size:.8rem;
+				float:left;
+				margin-left:-1.1rem;
+				margin-top:.1rem;
+			}
+			margin-left:0;
+			padding-left:.2rem;
+			padding-bottom:1rem;
+			&:last-of-type {
+				padding-bottom:0;
+			}
+		}
+	}
+}
+@mixin list-purple {
+	@include list-default;
+	li {
+		color:darken($purple,20%);
+		&:before {
+			color:lighten($purple,10%);
+		}
+	}
+}
+@mixin panel-default {
+	@include border-radius(.2rem);
+	font-weight:400;
+	margin-bottom:2rem;
+	margin-top:2rem;
+	.panel-header, .question-header {
+		padding-left:1rem;
+		padding-right:1rem;
+		font-family: 'Roboto Condensed';
+		text-align:center;
+		line-height:1.2;
+		@include border-radius(.2rem .2rem 0 0);
+		font-weight:500;
+		font-size:1.3rem;
+		padding-top:.7rem;
+		padding-bottom:.7rem;
+	}
+	.panel-body {
+		padding-left:1rem;
+		padding-right:1rem;
+		padding-bottom:.5rem;
+		p {
+			&:last-of-type {
+				margin-bottom:0;
+			}
+		}
+	}
+	&:first-child {
+		margin-top:2rem;
+	}
+}
+@mixin panel-purple {
+	@include panel-default;
+	background: transparentize($purple,.93);
+	.panel-header,.question-header {
+		background: transparentize($purple,.83)   ;
+		color:darken($purple,20%);
+		border-bottom:.1rem solid transparentize($purple,.8);
+	}
+}
+@mixin panel-blue {
+	@include panel-default;
+	background: transparentize($blue,.93);
+	.button-area {
+		background: transparentize($blue,.93);
+	}
+	.panel-header,.question-header {
+		background: transparentize($blue,.83)   ;
+		color:darken($blue,20%);
+		border-bottom:.1rem solid transparentize($blue,.8);
+	}
+}
+@mixin question-form {
+	h1 {
+		@include h3;
+		color:$dark-blue;
+		@include lineheight-hd;
+		margin:1.2rem;
+		font-style:italic;
+	}
+	form {
+		label {
+			@include font-lato;
+			display:block;
+			line-height:1.2;
+			cursor:pointer;
+			margin-left:0;
+			margin-right:0;
+			margin-bottom:1px;
+			color:$dark-blue;
+			&:hover {
+				@media (min-width:$breakpoint) {
+					background:transparentize($blue,.8);
+				}
+			}
+		}
+		span {
+			display:block;
+			padding-left:3.2rem;
+			padding-right:1rem;
+			padding-top:.8rem;
+			@include lineheight-hd;
+			padding-bottom:.8rem;
+			position:relative;
+			&:before, &:after {
+				position:absolute;
+				top:10px;
+				left:1.2rem;
+				font-size:1.5rem;
+				@include font-awesome;
+			}
+			&:before {
+				content:'\f111';
+				color:#fff;
+			}
+			&:after {
+				content:'\f1db';
+				color:$blue;
+			}
+		}
+		input[type=radio] {
+			position:absolute;
+			visibility:hidden;
+		}
+		input[type=radio]:checked + span{
+			background:transparentize($blue,.3);
+			color:#fff;
+			&:before {
+				display:none;
+			}
+			&:after {
+				content:'\f058';
+				color:#fff;
+			}
+		}
+		.button-area {
+			@include clearfix;
+			margin-top:1.2rem;
+			border-top:.1rem solid transparentize($blue,.8);
+			padding-top:.8rem;
+			//			background:transparentize($blue,.88);
+			padding-bottom:1rem;
+			button, input[type="submit"] {
+				@include button-form;
+			}
+		}
+	}
+}
+@mixin highlight {
+	background:yellow;
+}
+@mixin highlight-bordered {
+	border:1px solid #ddd;
+}
+@mixin you-answered {
+	@include font-lato;
+	@include highlight-bordered ;
+	@include border-radius(2px);
+	padding-top:.5rem;
+	padding-bottom:.5rem;
+	border:1px solid transparentize(#444,.8);
+	background:transparentize(#444,.96);
+	strong {
+		text-transform:uppercase;
+	}
+}
+@mixin resource-h1 {
+	@include h1;
+	@include font-lato;
+}
+@mixin resource-hd {
+	@include font-roboto;
+	@include lineheight-hd;
+	font-size:1.3rem;
+	color:$dark-purple;
+	font-weight:400;
+}
+@mixin resource-content {
+	@include textcolor-default;
+	@include font-lato;
+	@include lineheight-default;
+}
+@mixin dl {
+	padding-left:1rem;
+	padding-right:1rem;
+	dt {
+		@include resource-hd;
+		padding-bottom:.5rem;
+	}
+	dd {
+		@include resource-content;
+		margin-left:0;
+		padding-left:1rem;
+		margin-bottom:2rem;
+		a {
+			font-weight:400;
+		}
+	}
+}

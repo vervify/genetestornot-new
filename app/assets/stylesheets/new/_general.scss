@@ -1,0 +1,129 @@
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+html {
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+	@media (min-width:$breakpoint) {
+		font-size:18px;
+	}
+}
+body {
+	padding:0; 
+	margin:0;
+	@include flex-direction-column;
+}
+.red {
+	color:red;
+}
+.row {
+	padding-left:$bodymargin;
+	padding-right:$bodymargin;
+	.column {
+		margin:auto;
+		max-width:$bodywidth-main;
+	}
+}
+.qnav {
+	@include qnav;
+}
+.main-content {
+	padding-bottom:4rem;
+}
+hr {
+	@include hr;
+}
+h1 {
+	margin-top:2rem;
+	margin-bottom:2rem;
+	@include question-h1;
+}
+h2 {
+	margin-top:2rem;
+	@include question-h2;
+}
+h3 {
+	margin-top:2rem;
+	@include question-h3;
+}
+p {
+	@include para-default;
+	font-size:1.1rem;
+	@include link-default;
+}
+.legend {
+	@include chart-legend;
+}
+.caption {
+	@include caption;
+}
+.question {
+	@include panel-blue;
+	@include question-form;
+}
+.panel {
+	@include panel-purple;
+	@include list-purple;
+}
+.further-resources-link {
+	@include link-ref;
+}
+
+
+
+.familyriskspage {
+	.chart-family {
+		@include chart-family;
+	}
+}
+.usefulpage {
+	.chart-risk {
+		@include chart-useful;
+	}
+}
+.proconpage {
+	.section-pro {
+		@include section-pro;
+	}
+	.section-con {
+		@include section-con;
+	}
+}
+.resultspage {
+	.you-answered {
+		@include you-answered;
+		text-align:center;
+	}
+	.print-this-page {
+		text-align:center;
+	}
+	.print-button {
+		display:inline-block;
+		border:none;
+		background:none;
+		a {
+			@include button-print;
+		}
+	}
+}
+.glossarypage {
+	dl {
+		@include dl;
+	}
+	@include link-default;
+}
+.resourcespage {
+	h1 {
+		margin-top:3rem;
+		@include question-h1;
+	}
+	h2 {
+		padding-top:1rem;
+		@include resource-hd;
+	}
+	@include list-purple;
+	@include link-default;
+}
+
+

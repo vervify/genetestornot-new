@@ -8,28 +8,37 @@
 	</div>
 </div>
 <div class="qnav">
-	<div class="row">
-		<div class="column">
-			<div class="qnav-body">
-				<div class="qnav-pg">
-					<div class="qnav-hd"> Question #: </div>
-					<ul>
-						<li id="family-link" class="progress"><a href="/family_risks">1</a></li>
-						<li id="useful-link" class="progress progress-current"><span>2</span></li>
-						<li id="timing-link" class="progress"><span>3</span></li>
-						<li id="pros-link" class="progress"><span>4</span></li>
-					</ul>
-				</div>
-				<div class="qnav-inst">
-					<div class="qnav-hd">Instructions:</div>
-					<div class="qnav-content">
-						First, fully consider the information below. 
-						<span>Then, at the end,</span> submit your answer.
-					</div>
-				</div>
-			</div>
+	<div class="qnav-questions">
+		<div class="qnav-label"> Questions </div>
+		<div class="qnav-numbers">
+			<ul>
+				<li id="family-link" class="progress"><a href="/family_risks">1</a></li>
+				<li id="useful-link" class="progress progress-current"><span>2</span></li>
+				<li id="timing-link" class="progress"><span>3</span></li>
+				<li id="pros-link" class="progress"><span>4</span></li>
+				<li id="my-results" class="my-results"><a href="">My Results</a></li>
+			</ul>
 		</div>
 	</div>
+</div>
+<div class="qnav-inst">
+<div class="row">
+	<div class="column">
+		<div class="panel">
+		<div class="qnav-hd panel-header">Instructions:</div>
+		<div class="qnav-content panel-body">
+			<ul>
+				<li>
+					First, fully consider the information below. 
+				</li>
+				<li>
+					Then, at the end, submit your answer.
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</div>
 </div>
 <div class="usefulpage">
 	<div class="row">
@@ -141,7 +150,6 @@
 			<p class="further-resources-link">
 				<%= link_to "Further Resources about Understanding APOE Gene Tests", further_resources_path(anchor: "understanding"), target: "blank" %>
 			</p>
-			<hr />
 			<div class="question">
 				<div class="question-header">
 					Submit Your Answer Below:

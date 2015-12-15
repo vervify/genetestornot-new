@@ -1,0 +1,24 @@
+.homepage {
+	.button-consider {
+		margin-bottom:1rem;
+		@media (min-width:$breakpoint) {
+			padding-top:1rem;
+			padding-top:0;
+		}
+		@include home-button;
+	}
+	.logo-big {
+		margin-bottom:1rem;
+		img {
+			width:92%;
+			display:block;
+			max-width:20rem;
+		}
+	}
+	.home-para1 {
+		@include font-home1;
+	}	
+	.home-para2 {
+		@include font-home2;
+	}	
+}
