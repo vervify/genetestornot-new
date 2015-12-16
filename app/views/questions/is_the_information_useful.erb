@@ -16,7 +16,7 @@
 				<li id="useful-link" class="progress progress-current"><span>2</span></li>
 				<li id="timing-link" class="progress"><span>3</span></li>
 				<li id="pros-link" class="progress"><span>4</span></li>
-				<li id="my-results" class="my-results"><a href="">My Results</a></li>
+				<li id="my-results" class="my-results"></li>
 			</ul>
 		</div>
 	</div>
@@ -192,6 +192,9 @@
 		}
 		if (localStorage.getItem('timing') !== null && localStorage.getItem('timing') !== 'null'){
 			$('#pros-link').html('<a href="/pros_and_cons">4</a>')
+		}
+		if (localStorage.getItem('pros_and_cons') !== null && localStorage.getItem('pros_and_cons') !== 'null'){
+			$('#my-results').html('<a href="/results">My Results</a>')
 		}
 	});
 </script>

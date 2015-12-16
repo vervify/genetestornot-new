@@ -17,7 +17,7 @@
 				<li id="useful-link" class="progress"><a href="/is_the_information_useful">2</a></li>
 				<li id="timing-link" class="progress"><a href="/is_the_timing_right">3</a></li>
 				<li id="pros-link" class="progress progress-current"><span>4</span></li>
-				<li id="my-results" class="my-results"><a href="">My Results</a></li>
+				<li id="my-results" class="my-results"></li>
 				
 			</ul>
 		</div>
@@ -186,6 +186,7 @@
 
 		if (localStorage.getItem('pros_and_cons') !== null && localStorage.getItem('pros_and_cons') !== 'null'){
 			$('input[name="pros_and_cons"][value=' + localStorage.getItem('pros_and_cons') + ']').prop('checked', 'checked'); 
+			$('#my-results').html('<a href="/results">My Results</a>');
 		}
 
 	});
