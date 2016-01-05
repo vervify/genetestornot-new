@@ -16,28 +16,28 @@
 </div>
 	<div class="row">
 		<div class="column">
-			<h1>Making your decision &mdash; Should you get tested?</h1>
+			<h1>Your results to help you decide</h1>
 			<p>
 				Below we have included your answers to each question in this decision aid as well as a summary of the main issues related to each question.
 			</p>
 			<div class="results-item">
-				<h3 class="purple">Family Risks?</h3>
-				<p>If a member of your immediate family (parents or siblings) has been diagnosed with late-onset Alzheimer’s disease, you may have an increased risk of developing Alzheimer’s disease. In this section you explored your family history.</p>
+				<h3 class="purple">1. Does my family history put me at a higher risk for Alzheimer&rsquo;s Disease than other people?</h3>
+				<p>If a member of your immediate family (parents or siblings) has been diagnosed with late-onset Alzheimer&#8217;s disease, you may have an increased risk of developing Alzheimer&#8217;s disease.</p>
 				<p class="you-answered">You answered: <strong id="family"></strong></p>
 			</div>
 			<div class="results-item">
-				<h3 class="purple">Useful Info?</h3>
-				<p>The gene test for late-onset Alzheimer’s disease can reveal an increased risk of getting the disease, but it cannot give you a definitive answer whether you will or won’t develop it. This section discussed how much increased risk you might have if you have inherited one or two copies of the APOE e4 gene. However, many people with the APOE e4 gene will not get Alzheimer’s disease, and people without the gene can develop it.</p>
+				<h3 class="purple">2. Will the genetic test give me useful information?</h3>
+				<p>The gene test for late-onset Alzheimer&#8217;s disease can reveal an increased chance of getting the disease, but it cannot predict for sure if you will develop it &#8212; or if you won&#8217;t. By current estimates, if you have one copy of the APOE e4 gene, your risk of getting the disease by age 85 is slightly more than twice that of the general population. If you have two copies of the APOE e4 gene, your risk of getting the disease by age 85 is three to four times higher than the general population. However, many people with the APOE e4 gene will not get Alzheimer&#8217;s disease, and people without the gene can develop it.</p>
 				<p class="you-answered">You answered: <strong id="useful"></strong></p>
 			</div>
 			<div class="results-item">
-				<h3 class="purple">Is Timing Right?</h3>
+				<h3 class="purple">3. Is this the right time in my life to take this test?</h3>
 				<p>Timing of genetic testing is important. It is best done when things are calm enough in your life so you have time to think it through.</p>
 				<p class="you-answered">You answered: <strong id="timing"></strong></p>
 			</div>
 			<div class="results-item">
-				<h3 class="purple">Pros vs Cons?</h3>
-				<p>Genetic information has personal, family and societal consequences. In this section we presented stories to explore a number of advantages and disadvantages that might affect your decision whether or not to get gene testing. </p>
+				<h3 class="purple">4. Will the advantages outweigh the disadvantages?</h3>
+				<p>Genetic information has personal, family and societal consequences. Concerns include worrying too much if you have the gene, feeling helpless, potential family conflict, affects of insurance coverage. Possible benefits include being able to plan ahead, feeling driven to stay abreast of new information, getting family support and the ability to participate in research.</p>
 				<p class="you-answered">You answered: <strong id="pros"></strong></p>
 			</div>
 			<hr />
@@ -47,7 +47,8 @@
 			<div class="print-this-page">
 				<button id='print' class="print-button"><a href='#' onclick='window.print();return false;'>Print this page</a></button>
 			</div>
-			<p class="purple">Thank you for using this online decision tool. <%= link_to "To find a genetic counselor", further_resources_path(anchor: "find-a-counselor"), target: "blank" %> or for additional sources of information to help you with your choice can be found in the <%= link_to "Further Resources", further_resources_path, target: "blank" %> section of this website.</p>
+			<p class="purple"><%= link_to "To find a genetic counselor", further_resources_path(anchor: "find-a-counselor"), target: "blank" %> or for additional sources of information about genetic testing, see the <%= link_to "Resources", further_resources_path, target: "blank" %> section of this website.</p>
+			<p class="purple">Thank you for using this online decision tool. We welcome your feedback.</p>
 			<a name="question"></a>
 			<div class="question">
 				<div class="question-header">

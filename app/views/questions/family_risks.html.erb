@@ -29,7 +29,7 @@
 		<div class="qnav-content panel-body">
 			<ul>
 				<li>
-					First, fully consider the information below. 
+					First, consider the information below. 
 				</li>
 				<li>
 					Then, at the end, submit your answer.
@@ -46,14 +46,14 @@
 			<h1> Does my <strong>family history</strong> put me at a higher&nbsp;risk for Alzheimer&rsquo;s Disease than other&nbsp;people? </h1>
 			<p>Genetic testing is usually considered when a person might be at higher risk for a particular condition. Here we help you explore whether you may be at greater risk of getting late-onset Alzheimer&rsquo;s Disease, the form which affects older people, based on your family history.</p>
 			<h2>Everyone is at risk</h2>
-			<p>On average about 1 out of every 100 people will develop Alzheimer&rsquo;s by the time they turn 70. By 85, the risk is about 10 out of every 100 people.</p>
-			<h3>Probability of having Alzheimer&rsquo;s disease (or not) by ages <span class="segment"> 70 and 85.</span> </h3>
+			<p>On average 1 out of every 100 people will develop Alzheimer&rsquo;s by the time they turn 70. By 85, the risk is about 10 out of every 100 people.</p>
+			<h3>Probability of developing Alzheimer&rsquo;s disease (or not) by ages <span class="segment"> 70 and 85.</span> </h3>
 			<ul class="legend">
 				<li class="legend-purple">
 					The purple parts of each bar show the chance of developing Alzheimer&rsquo;s
 				</li>
 				<li class="legend-gray">
-					The gray parts of each bar show the chance of not developing Alzheimer&rsquo;s
+					The gray parts of each bar show the chance of <strong>not</strong> developing Alzheimer&rsquo;s
 				</li>
 			</ul>
 		</div>
@@ -110,9 +110,9 @@
 				</span></div>
 				<div class="panel-body">
 					<ul>
-						<li>Alzheimer&rsquo;s Disease is hard to diagnose and may have been misdiagnosed in your family member.</li>
+						<li>Alzheimer&rsquo;s Disease is hard to diagnose and may have been misdiagnosed in your family.</li>
 						<li>Dementia can arise from many causes, only one of which is Alzheimer&rsquo;s.</li>
-						<li>Non-inherited factors such as head injuries and things that raise your risk for heart disease &mdash; such as smoking, obesity, poorly controlled diabetes, lack of exercise, and high blood pressure &mdash; may be involved. We don&rsquo;t understand all the non-inherited factors that influence one&rsquo;s risk for Alzheimer&rsquo;s.</li>
+						<li>Non-inherited factors such as head injuries and things that raise your risk for heart disease &mdash; such as smoking, obesity, poorly controlled diabetes, lack of exercise, and high blood pressure &mdash; may be involved. We don&rsquo;t yet understand all the non-inherited factors that influence one&rsquo;s risk for Alzheimer&rsquo;s.</li>
 					</ul>
 				</div>
 			</div>
@@ -143,12 +143,12 @@
 							<span> My family history does not indicate that I have a higher risk of getting Alzheimer&rsquo;s Disease.	</span>
 						</label>
 						<label>
-							<%= radio_button_tag( :family_risks, 'unsure', checked = false, class: "check-box")%>
-							<span> I am unsure of my family history.	</span>
-						</label>
-						<label>
 							<%= radio_button_tag( :family_risks, 'concerned', checked = false, class: "check-box")%>
 							<span> Regardless of my family history, I am very concerned about Alzheimer&rsquo;s Disease.	</span>
+						</label>
+						<label>
+							<%= radio_button_tag( :family_risks, 'unsure', checked = false, class: "check-box")%>
+							<span> I am unsure of my family history.	</span>
 						</label>
 						<div class="button-area"> <a href="<%= useful_path %>"><%= button_tag "Next", id: "next-button"%></a> </div>
 					</form>
