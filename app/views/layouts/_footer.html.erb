@@ -1,4 +1,4 @@
-<footer>
+<footer class="hide-for-print">
 	<ul>
 		<li>	<%= link_to "Home", root_path %></li>
 		<li>	<%= link_to "About", about_path %></li>
@@ -18,11 +18,15 @@
 		<!--
 		<li>	<%= link_to "How To Use This Site", how_to_use_this_website_path %></li>
 		-->
-	<%= image_tag('vt_partial.png', class: 'vt-logo') %>
+		<%= image_tag('vt_partial.png', class: 'vt-logo') %>
 	</ul>
 	<p>
 		© 2014, 2015 Virginia Tech Intellectual Properties, Inc. and Breakneck Turtles Productions, all rights reserved. No written, visual or audio materials on this site may be copied or used without the express written permission of the copyright holders. Use of this site does not constitute a license to the rights.
 	</p>
 </footer>
+<p class="hide-for-screen print-footer">
+	© 2014, 2015 Virginia Tech Intellectual Properties, Inc. and Breakneck Turtles Productions, all rights reserved. No written, visual or audio materials on this site may be copied or used without the express written permission of the copyright holders. Use of this site does not constitute a license to the rights.
+</p>
+
 
 

@@ -1,3 +1,7 @@
+.hide-for-screen {
+	display:none;
+}
+
 *, *:before, *:after {
 	box-sizing: inherit;
 }
@@ -62,6 +66,9 @@ p {
 	@include panel-blue;
 	@include question-form;
 }
+.like-list {
+	@include like-list;
+}
 .panel {
 	@include panel-purple;
 	@include list-purple;
@@ -69,9 +76,6 @@ p {
 .further-resources-link {
 	@include link-ref;
 }
-
-
-
 .familyriskspage {
 	.chart-family {
 		@include chart-family;
@@ -124,6 +128,16 @@ p {
 	}
 	@include list-purple;
 	@include link-default;
+}
+.panel-home-important .panel-body {
+	padding-bottom:1rem;
+	p {
+		font-size:1rem;
+	}
+}
+
+.consent {
+	@include para-default;
 }
 
 

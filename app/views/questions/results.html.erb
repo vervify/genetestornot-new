@@ -1,44 +1,112 @@
+<style>
+	.print-footer {
+		border-top:1px solid #999;
+		padding-top:1rem;
+	}
+
+	.can-be-printed {
+		margin-top:1rem;
+	}
+	@media print {
+		h1 {
+			text-align:center;
+			font-size:2.4rem;
+
+	}
+	p {
+		margin-top:0;
+	}
+		
+		h2 {
+			font-size:2rem;
+			margin:1rem 0 .5rem 0;
+			text-align:center;
+		}
+		h3 {
+			margin:2rem 0 .5rem 0;
+			font-size:1.6rem;
+
+		}
+
+		.can-be-printed {
+			display:none;
+		}
+		.hide-for-print {
+			display:none;
+		}
+		html {
+			font-size:10px;
+		}
+		.header, .qnav {
+			display:none;
+		}
+		.you-answered div {
+			display:inline;
+
+		}
+		.row .column {
+			max-width:59rem;
+		}
+		footer {
+			display:none;
+		}
+		.hide-for-screen {
+			display:block;
+		}
+		.print-this-page {
+			display:none;
+		}
+		hr {
+			display:none;
+		}
+		.main-content {
+			padding-bottom:2rem;
+		}
+	}
+</style>
+
 <div class="resultspage">
-	<div class="qnav">
-	<div class="qnav-questions">
-		<div class="qnav-label"> Questions </div>
-		<div class="qnav-numbers">
-			<ul>
-				<li id="family-link" class="progress"><a href="/family_risks">1</a></li>
-				<li id="useful-link" class="progress"><a href="/is_the_information_useful">2</a></li>
-				<li id="timing-link" class="progress"><a href="/is_the_timing_right">3</a></li>
-				<li id="pros-link" class="progress"><a href="/pros_and_cons">4</a></li>
-				<li id="my-results" class="my-results progress-current"><span>My Results</span></li>
-				
-			</ul>
+	<div style="background:url(http://nphillips.com/2016-01-07-temp-genetest-logo/logo.png) center center no-repeat; background-size:contain; width:200px; height:90px; " class="hide-for-screen"></div>
+	<div class="qnav hide-for-print">
+		<div class="qnav-questions">
+			<div class="qnav-label"> Questions </div>
+			<div class="qnav-numbers">
+				<ul>
+					<li id="family-link" class="progress"><a href="/family_risks">1</a></li>
+					<li id="useful-link" class="progress"><a href="/is_the_information_useful">2</a></li>
+					<li id="timing-link" class="progress"><a href="/is_the_timing_right">3</a></li>
+					<li id="pros-link" class="progress"><a href="/pros_and_cons">4</a></li>
+					<li id="my-results" class="my-results progress-current"><span>My Results</span></li>
+
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 	<div class="row">
 		<div class="column">
 			<h1>Your results to help you decide</h1>
-			<p>
+			<p class="hide-for-print">
 				Below we have included your answers to each question in this decision aid as well as a summary of the main issues related to each question.
 			</p>
 			<div class="results-item">
 				<h3 class="purple">1. Does my family history put me at a higher risk for Alzheimer&rsquo;s Disease than other people?</h3>
 				<p>If a member of your immediate family (parents or siblings) has been diagnosed with late-onset Alzheimer&#8217;s disease, you may have an increased risk of developing Alzheimer&#8217;s disease.</p>
-				<p class="you-answered">You answered: <strong id="family"></strong></p>
+				<div class="you-answered"><div>You answered:</div> <strong id="family"></strong></div>
 			</div>
 			<div class="results-item">
 				<h3 class="purple">2. Will the genetic test give me useful information?</h3>
 				<p>The gene test for late-onset Alzheimer&#8217;s disease can reveal an increased chance of getting the disease, but it cannot predict for sure if you will develop it &#8212; or if you won&#8217;t. By current estimates, if you have one copy of the APOE e4 gene, your risk of getting the disease by age 85 is slightly more than twice that of the general population. If you have two copies of the APOE e4 gene, your risk of getting the disease by age 85 is three to four times higher than the general population. However, many people with the APOE e4 gene will not get Alzheimer&#8217;s disease, and people without the gene can develop it.</p>
-				<p class="you-answered">You answered: <strong id="useful"></strong></p>
+				<div class="you-answered"><div>You answered:</div> <strong id="useful"></strong></div>
 			</div>
 			<div class="results-item">
 				<h3 class="purple">3. Is this the right time in my life to take this test?</h3>
 				<p>Timing of genetic testing is important. It is best done when things are calm enough in your life so you have time to think it through.</p>
-				<p class="you-answered">You answered: <strong id="timing"></strong></p>
+				<div class="you-answered"><div>You answered:</div> <strong id="timing"></strong></div>
 			</div>
 			<div class="results-item">
 				<h3 class="purple">4. Will the advantages outweigh the disadvantages?</h3>
 				<p>Genetic information has personal, family and societal consequences. Concerns include worrying too much if you have the gene, feeling helpless, potential family conflict, affects of insurance coverage. Possible benefits include being able to plan ahead, feeling driven to stay abreast of new information, getting family support and the ability to participate in research.</p>
-				<p class="you-answered">You answered: <strong id="pros"></strong></p>
+				<div class="you-answered"><div>You answered:</div> <strong id="pros"></strong></div>
 			</div>
 			<hr />
 			<h2 class="purple">Conclusion</h2>
@@ -47,26 +115,32 @@
 			<div class="print-this-page">
 				<button id='print' class="print-button"><a href='#' onclick='window.print();return false;'>Print this page</a></button>
 			</div>
-			<p class="purple"><%= link_to "To find a genetic counselor", further_resources_path(anchor: "find-a-counselor"), target: "blank" %> or for additional sources of information about genetic testing, see the <%= link_to "Resources", further_resources_path, target: "blank" %> section of this website.</p>
-			<p class="purple">Thank you for using this online decision tool. We welcome your feedback.</p>
-			<a name="question"></a>
-			<div class="question">
-				<div class="question-header">
-					Get Results for Someone Else:
-				</div>
-				<div class="question-body">
-					<h1>
-						Is there someone else that wants to consider the 4 questions on this computer? Check the box below to clear all answers and begin again.
-					</h1>
-					<form action="<%= root_path %>" method="get" id="question_form">
-						<label>
-							<%= radio_button_tag( :clear_answers, 'concerned', checked = false, class: "check-box")%>
-							<span> Clear all my answers and continue back to the beginning.	</span>
-						</label>
-						<div class="button-area"><a href="<%= root_path %>"><%= button_tag "Begin", id: "next-button"%></a> </div>
-					</form>
-				</div>
-			</div>
+			<p class="purple hide-for-print"><%= link_to "To find a genetic counselor", further_resources_path(anchor: "find-a-counselor"), target: "blank" %> or for additional sources of information about genetic testing, see the <%= link_to "Resources", further_resources_path, target: "blank" %> section of this website.</p>
+			<p class="purple hide-for-print">Thank you for using this online decision tool. We welcome your feedback.</p>
+			<hr />
+
+
+			<p class="hide-for-print">
+
+				For privacy or to allow someone else to use the tool,
+				<a href="#" class="red" style="text-decoration:underline; display:inline-block;">
+					clear your answers
+				</a>
+				.
+
+			</p>
+
+
+			<!--
+			<form action="<%= root_path %>" method="get" id="question_form">
+				<label>
+					<%= radio_button_tag( :clear_answers, 'concerned', checked = false, class: "check-box")%> 
+					<span> Clear all my answers and continue back to the beginning.	</span> 
+				</label>
+				<div class="button-area"><a class="button" href="<%= root_path %>"><%= button_tag "Reset & Start Over", id: "next-button"%></a> </div>
+			</form>
+			-->
+
 		</div>
 	</div>
 </div>
@@ -81,11 +155,11 @@
 		$('#timing').html(timing);
 		$('#pros').html(pros);
 		if((family === 'yes' || family === 'concerned') && (useful === 'yes') && (timing === 'yes') && (pros === 'yes')) {
-			$('#conclusion').html("Based on your answers, none of the issues considered here indicate barriers to APOE genetic testing. Your answers to these four questions form the basis of your decision, but factors unique to you and your family also need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <span id='print'>This page can be <a href='#' onclick='window.print();return false;'>printed</a> for you to take with you and to use as a basis for further discussions.</span>");
+			$('#conclusion').html("Based on your answers, none of the issues considered here indicate barriers to APOE genetic testing. Your answers to these four questions form the basis of your decision, but factors unique to you and your family also need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <div class='can-be-printed'>This page can be <span id='print'><a href='#' onclick='window.print();return false;'>printed</a></span> for you to take with you and to use as a basis for further discussions.</div>");
 		} else if((family === 'yes' || family === 'unsure' || family === 'concerned') && (useful === 'yes' || useful === 'unsure') && (timing === 'yes' || timing === 'unsure') && (pros === 'yes' || pros === 'unsure')) {
-			$('#conclusion').html("Based on your answers, it appears you do not yet have enough information to make a decision. You may return to any of the four questions by clicking the question numbers above. Keep in mind that your answers to these four questions help form the basis of your decision, but other factors unique to you and your family also need to be considered. A doctor, a genetic counselor, or other health-care professional can help you understand these factors and any other questions or concerns you may have. <span id='print'>This page can be <a href='#' onclick='window.print();return false;'>printed</a> for you to take with you and to use as a basis for further discussions.</span>");
+			$('#conclusion').html("Based on your answers, it appears you do not yet have enough information to make a decision. You may return to any of the four questions by clicking the question numbers above. Keep in mind that your answers to these four questions help form the basis of your decision, but other factors unique to you and your family also need to be considered. A doctor, a genetic counselor, or other health-care professional can help you understand these factors and any other questions or concerns you may have. <div class='can-be-printed'>This page can be <span id='print'><a href='#' onclick='window.print();return false;'>printed</a></span> for you to take with you and to use as a basis for further discussions.</div>");
 		} else {
-			$('#conclusion').html("Based on your answers, concerns exist that are barriers to you for APOE testing. In addition, other factors unique to you and your family need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <span id='print'>This page can be <a href='#' onclick='window.print();return false;'>printed</a> for you to take with you and to use as a basis for further discussions.</span>");
+			$('#conclusion').html("Based on your answers, concerns exist that are barriers to you for APOE testing. In addition, other factors unique to you and your family need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <div class='can-be-printed'>This page can be <span id='print'><a href='#' onclick='window.print();return false;'>printed</a></span> for you to take with you and to use as a basis for further discussions.</div>");
 		}
 		$('#next-button').click(function(){
 			localStorage.setItem('family_risks', null);

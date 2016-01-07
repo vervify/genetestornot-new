@@ -26,15 +26,14 @@
 	<div class="column">
 		<div class="panel">
 		<div class="qnav-hd panel-header">Instructions:</div>
-		<div class="qnav-content panel-body">
-			<ul>
-				<li>
-					First, consider the information below. 
-				</li>
-				<li>
-					Then, at the end, submit your answer.
-				</li>
-			</ul>
+		<div class="qnav-content panel-body like-list">
+
+			<p>
+				First, consider the information below. 
+
+
+				Then, at the end, submit your answer.
+			</p>
 		</div>
 	</div>
 	</div>
@@ -146,7 +145,8 @@
 					</ul>
 				</div>
 			</div>
-			<p><span class="red">Note:</span> The cost for the APOE gene test currently ranges from $100 to about $400, depending on the laboratory. For greatest accuracy, genetic testing should be done by a CLIA-certified laboratory.</p>
+			<p><span class="red">Note:</span> The cost for the APOE gene test currently ranges from $100 to about $400, depending on the laboratory. For greatest accuracy, genetic testing should be done by a 
+				<%= link_to "CLIA-certified laboratory", glossary_path(anchor: "clia-certified"), target: "blank" %>.</p>
 			<p class="further-resources-link">
 				<%= link_to "Further Resources about Understanding APOE Gene Tests", further_resources_path(anchor: "understanding"), target: "blank" %>
 			</p>
