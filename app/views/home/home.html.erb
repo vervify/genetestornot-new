@@ -15,6 +15,10 @@
 		padding-top:2rem;
 		padding-bottom:2rem;
 	}
+	#dialog-message .panel{
+		height: 420px;
+		width: 702px;
+	}
 </style>
 <div class="homepage">
 	<div class="row">
@@ -35,26 +39,26 @@
 					</p>
 				</div>
 			</div>
-			<div class="panel panel-home-important">
-				<div class="panel-header">Important:</div>
-				<div class="panel-body">
-					<p>
-						Alzheimer’s disease is a brain ailment causing symptoms of dementia (mental deterioration, memory loss, personality changes) which worsen over time. The common form of the disease, called late-onset Alzheimer’s, develops after age 60. There is a rare form of this disease, called early-onset Alzheimer’s, which develops between the ages of 30-60.
-					</p>
-					<p>
-						This site is only designed to help with late-onset Alzheimer’s and cannot help with early-onset Alzheimer’s.
-					</p>
-				</div>
-			</div>
 			<form method="get" action="family-risks.html">
 
-				<div class="consent">
-					<input type="checkbox" class="checkbox" value="" name="" />
-					<span>&nbsp;I understand. Let's begin.</span>
-
+				<div id="dialog-message">
+					<div class="panel panel-home-important">
+						<div class="panel-header">Important:</div>
+						<div class="panel-body">
+							<p>
+								Alzheimer’s disease is a brain ailment causing symptoms of dementia (mental deterioration, memory loss, personality changes) which worsen over time. The common form of the disease, called late-onset Alzheimer’s, develops after age 60. There is a rare form of this disease, called early-onset Alzheimer’s, which develops between the ages of 30-60.
+							</p>
+							<p>
+								This site is only designed to help with late-onset Alzheimer’s and cannot help with early-onset Alzheimer’s.
+							</p>
+						</div>
+						<div class="button-consider">
+							<%= link_to "I Understand, Let's Begin", family_risks_path %>
+						</div>
+					</div>
 				</div>
-				<div class="button-consider">
-					<%= link_to "Consider These 4 Questions", family_risks_path %>
+				<div class="button-consider" id="modal">
+					<%= link_to "Consider These 4 Questions" %>
 				</div>
 			</form>
 		</div>

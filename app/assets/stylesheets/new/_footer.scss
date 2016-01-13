@@ -24,7 +24,7 @@ footer {
 	}
 	p {
 		@include font-footer2;
-
+		padding-right: 6em;
 	}
 	li {
 		@include font-footer1;

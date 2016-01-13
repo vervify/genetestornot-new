@@ -1,4 +1,19 @@
+<script type="text/javascript">
+		var family = localStorage.getItem('family_risks');
+
+		if(family === "null"){
+			window.location = "/";
+		}
+</script>
 <style>
+	#hidden-logo{
+		width: 100px;
+		height: 45px;
+		z-index:-1;
+		position: absolute;
+		top: 0px;
+	  left: 50px;
+	}
 	.print-footer {
 		border-top:1px solid #999;
 		padding-top:1rem;
@@ -64,10 +79,8 @@
 		}
 	}
 </style>
-
 <div class="resultspage">
-	<div style="background:url(http://nphillips.com/2016-01-07-temp-genetest-logo/logo.png) center center no-repeat; background-size:contain; width:200px; height:90px; " class="hide-for-screen"></div>
-	<div class="qnav hide-for-print">
+	<div class="qnav">
 		<div class="qnav-questions">
 			<div class="qnav-label"> Questions </div>
 			<div class="qnav-numbers">
@@ -84,6 +97,7 @@
 	</div>
 	<div class="row">
 		<div class="column">
+			<%= image_tag("http://nphillips.com/2016-01-07-temp-genetest-logo/logo.png", id:"hidden-logo")%>
 			<h1>Your results to help you decide</h1>
 			<p class="hide-for-print">
 				Below we have included your answers to each question in this decision aid as well as a summary of the main issues related to each question.
@@ -119,11 +133,24 @@
 			<p class="purple hide-for-print">Thank you for using this online decision tool. We welcome your feedback.</p>
 			<hr />
 
-
+			<div id="dialog-message">
+				<form method="get" action="family-risks.html">
+					<div class="panel panel-home-important">
+						<div class="panel-header">Your answers have been cleared.</div>
+						<div class="panel-body">
+							<p>
+								Your results will remain on this screen until you exit or refresh this page.
+							</p>
+							<br>
+							<i class="fa fa-close modal-close"></i>
+						</div>
+					</div>
+				</form>
+			</div>
 			<p class="hide-for-print">
 
 				For privacy or to allow someone else to use the tool,
-				<a href="#" class="red" style="text-decoration:underline; display:inline-block;">
+				<a href="#" class="red" style="text-decoration:underline; display:inline-block;" id="modal">
 					clear your answers
 				</a>
 				.
@@ -146,14 +173,15 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		var family = localStorage.getItem('family_risks');
 		var useful = localStorage.getItem('useful');
 		var timing = localStorage.getItem('timing');
 		var pros = localStorage.getItem('pros_and_cons');
+
 		$('#family').html(family);
 		$('#useful').html(useful);
 		$('#timing').html(timing);
 		$('#pros').html(pros);
+
 		if((family === 'yes' || family === 'concerned') && (useful === 'yes') && (timing === 'yes') && (pros === 'yes')) {
 			$('#conclusion').html("Based on your answers, none of the issues considered here indicate barriers to APOE genetic testing. Your answers to these four questions form the basis of your decision, but factors unique to you and your family also need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <div class='can-be-printed'>This page can be <span id='print'><a href='#' onclick='window.print();return false;'>printed</a></span> for you to take with you and to use as a basis for further discussions.</div>");
 		} else if((family === 'yes' || family === 'unsure' || family === 'concerned') && (useful === 'yes' || useful === 'unsure') && (timing === 'yes' || timing === 'unsure') && (pros === 'yes' || pros === 'unsure')) {
@@ -161,7 +189,7 @@
 		} else {
 			$('#conclusion').html("Based on your answers, concerns exist that are barriers to you for APOE testing. In addition, other factors unique to you and your family need to be considered. You should discuss these with your doctor, a genetic counselor, or other health-care professional. <div class='can-be-printed'>This page can be <span id='print'><a href='#' onclick='window.print();return false;'>printed</a></span> for you to take with you and to use as a basis for further discussions.</div>");
 		}
-		$('#next-button').click(function(){
+		$('#modal').click(function(){
 			localStorage.setItem('family_risks', null);
 			localStorage.setItem('useful', null);
 			localStorage.setItem('timing', null);
