@@ -1,0 +1,245 @@
+
+
+@mixin chart-family {
+	.ages {
+		td {
+			@include text-chart-heads;
+		}
+	}
+	padding-left:4rem;
+	padding-right:0;
+	@media (min-width:1044px) {
+		padding-left:1rem;
+		padding-right:1rem;
+	}
+	.column {
+		margin:auto;
+		max-width:350px;
+		@media (min-width:1044px) {
+			margin:auto;
+			max-width:830px;
+		}
+	}
+	ul {
+		width:100%;
+		display:table;
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		margin-top:1rem;
+		@media (min-width:1044px) {
+			margin-top:1.5rem;
+		}
+	}
+	li {
+		padding-right:2rem;
+		margin-bottom:1rem;
+		@media (min-width:1044px) {
+			display:table-cell;
+			padding-left:60px;
+			width:50%;
+		}
+	}
+	table {
+		width:100%;
+		position:relative;
+		border-collapse:separate;
+		border-spacing:10px;
+		&:before {
+			@include text-chart-axis;
+			content:'0%—';
+			position:absolute;
+			width:70px;
+			text-align:right;
+			left:-60px;
+			bottom:60px;
+			@media (min-width:$breakpoint) {
+				bottom:62px;
+			}
+		}
+		&:after {
+			content:'';
+			position:absolute;
+			height:1px;
+			width:100%;
+			display:none;
+			border-top: 2px dotted transparentize(#000,.9) ;
+			top:199px;
+			@media (min-width:$breakpoint) {
+				top:205px;
+			}
+		}
+	}
+	td {
+		width:50%;
+		position:relative;
+	}
+	tr.chart-head {
+		td {
+			@include text-chart-heads;
+			vertical-align:bottom;
+			height:3rem;
+			text-align:center;
+			font-weight:bold;
+			font-size:1.1rem;
+			line-height:1.1;
+			padding-bottom:.4rem;
+		}
+	}
+	tr.chart-main {
+		td {
+			height:250px;
+			-webkit-border-radius: 2px;
+			-moz-border-radius: 2px;
+			border-radius: 2px;
+			@include linear-gradient("to top", #ddd, #ddd);
+			// box-shadow:0 1px 6px rgba(0, 0, 0, 0.2) inset ;
+		}
+		td:first-child {
+			position:relative;
+			&:before {
+				@include text-chart-axis;
+				content:'100%—';
+				position:absolute;
+				width:70px;
+				text-align:right;
+				top:-10px;
+				left:-70px;
+			}
+			&:after {
+				@include text-chart-axis;
+				content:'50%—';
+				height:30px;
+				position:absolute;
+				width:70px;
+				text-align:right;
+				top:50%;
+				margin-top:-15px;
+				left:-70px;
+			}
+		}
+	}
+	tr.ages {
+		td {
+			text-align:center;
+			line-height:1.2;
+		}
+		i {
+			font-style:normal;
+			display:block;
+		}
+		b {
+			font-size:1.3rem;
+			display:block;
+		}
+	}
+	[class^="age-"] {
+		@include text-chart-heads;
+		position:absolute;
+		bottom:0;
+		width:99%;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		@include linear-gradient("to top", $purple, $purple);
+		white-space:nowrap;
+	}
+	.general {
+		.age-70 {
+			height:1%;
+			&:before {
+				content:'1%';
+				font-weight:bold;
+				font-size:1.3rem;
+				color:$purple;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				top:-35px;
+			}
+		}
+		.age-85 {
+			height:12%;
+			&:before {
+				content:'10-15%';
+				font-weight:bold;
+				font-size:1.3rem;
+				color:$purple;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				top:-35px;
+			}
+		}
+	}
+	.with-1-copy {
+		.age-70 {
+			height:2%;
+			&:before {
+				content:'2%';
+				font-weight:bold;
+				font-size:1.3rem;
+				color:$purple;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				top:-35px;
+			}
+		}
+		.age-85 {
+			height:20%;
+			&:before {
+				content:'20%';
+				font-weight:bold;
+				font-size:1.3rem;
+				color:$purple;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				top:-35px;
+			}
+		}
+	}
+	.with-2-copies {
+		.age-65 {
+			height:25%;
+			&:before {
+				content:'20-30%';
+				font-weight:bold;
+				font-size:1.3rem;
+				color:$purple;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				top:-35px;
+			}
+		}
+		.age-75 {
+			height:32%;
+			&:before {
+				content:'25-40%';
+				font-weight:bold;
+				font-size:1.3rem;
+				color:$purple;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				top:-35px;
+			}
+		}
+		.age-85 {
+			height:47%;
+			&:before {
+				content:'40-55%';
+				font-weight:bold;
+				font-size:1.3rem;
+				color:$purple;
+				position:absolute;
+				width:100%;
+				text-align:center;
+				top:-35px;
+			}
+		}
+	}
+}
+

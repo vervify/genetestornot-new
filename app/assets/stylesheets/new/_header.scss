@@ -1,5 +1,6 @@
+
 .header {
-	@include linear-gradient("to bottom", hsla(200, 90%, 50%, .95), hsla(280, 40%, 50%, .9));
+	@include linear-gradient("to bottom", hsla(200, 90%, 50%, 1), hsla(280, 40%, 50%, 1));
 	ul {
 		list-style-type:none;
 		margin:0;

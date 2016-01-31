@@ -34,8 +34,14 @@ $(document).on('ready page:load', function () {
     }
   });
 
+  $("#modal").click(function(e){
+  	e.preventDefault();
+  	$("#dialog-message").show("fade");
+  })
+
 	$( ".modal-close" ).click(function() {
 	  $( "#dialog-message" ).hide('fade');
 	});
 });
+
 
