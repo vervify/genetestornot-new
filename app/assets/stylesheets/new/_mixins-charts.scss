@@ -101,7 +101,7 @@
 	.quote {
 		@include quote;
 	}
-	.play-video {
+	.play-video a {
 		@include font-roboto;
 		&:before {
 			content:'\f144';
