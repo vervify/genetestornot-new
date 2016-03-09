@@ -92,12 +92,26 @@
 <script type="text/javascript">
 	$(function(){
 		
+		setTimeout(function() {
+			$('#family-link a').effect("highlight",{color: 'PowderBlue'}, 2000)
+		}, 200);
+
+		setTimeout(function() {
+			$('#useful-link a').effect("highlight",{color: 'PowderBlue'}, 2000)
+		}, 400);
+
 		if (localStorage.getItem('timing') !== null && localStorage.getItem('timing') !== 'null'){
 			$('#pros-link').html('<a href="/pros_and_cons">4</a>')
 			$('input[name="timing"][value=' + localStorage.getItem('timing') + ']').prop('checked', 'checked'); 
+			setTimeout(function() { 
+				$('#pros-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
+			}, 800);
 		}
 		if (localStorage.getItem('pros_and_cons') !== null && localStorage.getItem('pros_and_cons') !== 'null'){
 			$('#my-results').html('<a href="/results">My Results</a>')
+			setTimeout(function() { 
+				$('#my-results a').effect("highlight",{color: 'PowderBlue'}, 2000);
+			}, 1000);
 		}
 
 	});

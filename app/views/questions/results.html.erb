@@ -173,6 +173,24 @@
 </div>
 <script type="text/javascript">
 	$(function(){
+
+		setTimeout(function() {
+			$('#family-link a').effect("highlight",{color: 'PowderBlue'}, 2000)
+		}, 200);
+
+		setTimeout(function() {
+			$('#useful-link a').effect("highlight",{color: 'PowderBlue'}, 2000)
+		}, 400);
+
+		setTimeout(function() { 
+			$('#timing-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
+		}, 600);
+
+		setTimeout(function() { 
+			$('#pros-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
+		}, 800);
+
+
 		var useful = localStorage.getItem('useful');
 		var timing = localStorage.getItem('timing');
 		var pros = localStorage.getItem('pros_and_cons');

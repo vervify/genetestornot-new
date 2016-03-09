@@ -182,9 +182,24 @@
 <script type="text/javascript">
 	$(function(){
 
+		setTimeout(function() {
+			$('#family-link a').effect("highlight",{color: 'PowderBlue'}, 2000)
+		}, 200);
+
+		setTimeout(function() {
+			$('#useful-link a').effect("highlight",{color: 'PowderBlue'}, 2000)
+		}, 400);
+
+		setTimeout(function() { 
+			$('#timing-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
+		}, 600);
+
 		if (localStorage.getItem('pros_and_cons') !== null && localStorage.getItem('pros_and_cons') !== 'null'){
 			$('input[name="pros_and_cons"][value=' + localStorage.getItem('pros_and_cons') + ']').prop('checked', 'checked'); 
 			$('#my-results').html('<a href="/results">My Results</a>');
+			setTimeout(function() { 
+				$('#my-results a').effect("highlight",{color: 'PowderBlue'}, 2000);
+			}, 1000);
 		}
 
 	});

@@ -186,15 +186,29 @@
 </div>
 <script type="text/javascript">
 	$(function(){
+
+		setTimeout(function() {
+			$('#family-link a').effect("highlight",{color: 'PowderBlue'}, 2000)
+		}, 200);
+
 		if (localStorage.getItem('useful') !== null && localStorage.getItem('useful') !== 'null'){
 			$('#timing-link').html('<a href="/is_the_timing_right">3</a>')
 				$('input[name="useful"][value=' + localStorage.getItem('useful') + ']').prop('checked', 'checked'); 
+				setTimeout(function() { 
+					$('#timing-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
+				}, 600);
 		}
 		if (localStorage.getItem('timing') !== null && localStorage.getItem('timing') !== 'null'){
 			$('#pros-link').html('<a href="/pros_and_cons">4</a>')
+			setTimeout(function() { 
+				$('#pros-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
+			}, 800);
 		}
 		if (localStorage.getItem('pros_and_cons') !== null && localStorage.getItem('pros_and_cons') !== 'null'){
 			$('#my-results').html('<a href="/results">My Results</a>')
+			setTimeout(function() { 
+				$('#my-results a').effect("highlight",{color: 'PowderBlue'}, 2000);
+			}, 1000);
 		}
 	});
 </script>
