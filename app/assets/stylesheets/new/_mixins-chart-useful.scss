@@ -50,23 +50,23 @@
 		@media (min-width:1244px) {
 		border-spacing:10px;
 		}
-		&:before {
-			@include text-chart-axis;
-			content:'0%—';
-			position:absolute;
-			width:70px;
-			text-align:right;
-			left:-65px;
-			bottom:48px;
-			@media (max-width:1144px) {
-				bottom:58px;
-			left:-60px;
-			}
-			@media (min-width:1244px) {
-			left:-60px;
-				bottom:57px;
-			}
-		}
+		// &:before {
+		// 	@include text-chart-axis;
+		// 	content:'0%—';
+		// 	position:absolute;
+		// 	width:70px;
+		// 	text-align:right;
+		// 	left:-65px;
+		// 	bottom:48px;
+		// 	@media (max-width:1144px) {
+		// 		bottom:58px;
+		// 	left:-60px;
+		// 	}
+		// 	@media (min-width:1244px) {
+		// 	left:-60px;
+		// 		bottom:57px;
+		// 	}
+		// }
 		&:after {
 			content:'';
 			position:absolute;
@@ -105,26 +105,26 @@
 		}
 		td:first-child {
 			position:relative;
-			&:before {
-				@include text-chart-axis;
-				content:'100%—';
-				position:absolute;
-				width:70px;
-				text-align:right;
-				top:-11px;
-				left:-70px;
-			}
-			&:after {
-				@include text-chart-axis;
-				content:'50%—';
-				height:30px;
-				position:absolute;
-				width:70px;
-				text-align:right;
-				top:50%;
-				margin-top:-15px;
-				left:-70px;
-			}
+			// &:before {
+			// 	@include text-chart-axis;
+			// 	content:'100%—';
+			// 	position:absolute;
+			// 	width:70px;
+			// 	text-align:right;
+			// 	top:-11px;
+			// 	left:-70px;
+			// }
+			// &:after {
+			// 	@include text-chart-axis;
+			// 	content:'50%—';
+			// 	height:30px;
+			// 	position:absolute;
+			// 	width:70px;
+			// 	text-align:right;
+			// 	top:50%;
+			// 	margin-top:-15px;
+			// 	left:-70px;
+			// }
 		}
 	}
 	tr.ages {
