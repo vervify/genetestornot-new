@@ -97,26 +97,26 @@
 		}
 		td:first-child {
 			position:relative;
-			&:before {
-				@include text-chart-axis;
-				content:'100%—';
-				position:absolute;
-				width:70px;
-				text-align:right;
-				top:-10px;
-				left:-70px;
-			}
-			&:after {
-				@include text-chart-axis;
-				content:'50%—';
-				height:30px;
-				position:absolute;
-				width:70px;
-				text-align:right;
-				top:50%;
-				margin-top:-15px;
-				left:-70px;
-			}
+			// &:before {
+			// 	@include text-chart-axis;
+			// 	content:'100%—';
+			// 	position:absolute;
+			// 	width:70px;
+			// 	text-align:right;
+			// 	top:-10px;
+			// 	left:-70px;
+			// }
+			// &:after {
+			// 	@include text-chart-axis;
+			// 	content:'50%—';
+			// 	height:30px;
+			// 	position:absolute;
+			// 	width:70px;
+			// 	text-align:right;
+			// 	top:50%;
+			// 	margin-top:-15px;
+			// 	left:-70px;
+			// }
 		}
 	}
 	tr.ages {
