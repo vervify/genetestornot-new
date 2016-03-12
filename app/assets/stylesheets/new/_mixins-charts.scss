@@ -104,6 +104,7 @@
 	.play-video a {
 		@include font-roboto;
 		&:before {
+			padding-right: 7.5px;
 			content:'\f144';
 			display:inline-block;
 			font-family:FontAwesome;
