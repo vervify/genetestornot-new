@@ -45,18 +45,18 @@
 		position:relative;
 		border-collapse:separate;
 		border-spacing:10px;
-		// &:before {
-		// 	@include text-chart-axis;
-		// 	content:'0%—';
-		// 	position:absolute;
-		// 	width:70px;
-		// 	text-align:right;
-		// 	left:-60px;
-		// 	bottom:60px;
-		// 	@media (min-width:$breakpoint) {
-		// 		bottom:62px;
-		// 	}
-		// }
+		&:before {
+			@include text-chart-axis;
+			content:'0%—';
+			position:absolute;
+			width:70px;
+			text-align:right;
+			left:-60px;
+			bottom:60px;
+			@media (min-width:$breakpoint) {
+				bottom:62px;
+			}
+		}
 		&:after {
 			content:'';
 			position:absolute;

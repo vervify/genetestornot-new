@@ -50,23 +50,23 @@
 		@media (min-width:1244px) {
 		border-spacing:10px;
 		}
-		// &:before {
-		// 	@include text-chart-axis;
-		// 	content:'0%—';
-		// 	position:absolute;
-		// 	width:70px;
-		// 	text-align:right;
-		// 	left:-65px;
-		// 	bottom:48px;
-		// 	@media (max-width:1144px) {
-		// 		bottom:58px;
-		// 	left:-60px;
-		// 	}
-		// 	@media (min-width:1244px) {
-		// 	left:-60px;
-		// 		bottom:57px;
-		// 	}
-		// }
+		&:before {
+			@include text-chart-axis;
+			content:'0%—';
+			position:absolute;
+			width:70px;
+			text-align:right;
+			left:-65px;
+			bottom:48px;
+			@media (max-width:1144px) {
+				bottom:58px;
+			left:-60px;
+			}
+			@media (min-width:1244px) {
+			left:-60px;
+				bottom:57px;
+			}
+		}
 		&:after {
 			content:'';
 			position:absolute;
