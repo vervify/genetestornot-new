@@ -54,7 +54,7 @@
 	flex-direction: column;
 	display: flex;
 	min-height: 100vh;
-	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		display:block;
 	}
 	.main-content {
@@ -99,7 +99,7 @@
 	}
 }
 @mixin button-small {
-	float:right; 
+	float:right;
 	font-weight:600;
 	padding:.4rem;
 	min-width:7rem;
@@ -191,13 +191,13 @@
 //
 @mixin textcolor-default {
 	color: rgba(0, 0, 0, 0.75);
-}	
+}
 @mixin textcolor-blue {
 	color: $blue;
-}	
+}
 @mixin textcolor-purple {
 	color: $dark-purple;
-}	
+}
 @mixin lineheight-default {
 	line-height:1.6;
 }
@@ -381,10 +381,8 @@
 			padding-left:.2rem;
 			padding-bottom:1rem;
 		}
-} 
-		
-	
 }
+
 @mixin list-default {
 	ul {
 		margin-left:0;
@@ -570,7 +568,7 @@
 	padding-bottom:.8rem;
 	border:1px solid transparentize(#444,.8);
 	background:transparentize(#444,.96);
-	
+
 }
 @mixin resource-h1 {
 	@include h1;
