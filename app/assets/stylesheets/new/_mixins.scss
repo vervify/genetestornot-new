@@ -373,11 +373,15 @@
 		padding-top:.2rem;
 		@include font-lato;
 		@include lineheight-list;
+		p:first-child {
+        padding-bottom:0rem;
+        }
 		p {
 			margin-left:0;
 			padding-left:.2rem;
 			padding-bottom:1rem;
 		}
+} 
 		
 	
 }

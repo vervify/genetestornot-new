@@ -104,11 +104,12 @@
 	.play-video a {
 		@include font-roboto;
 		&:before {
-			padding-right: 7.5px;
 			content:'\f144';
 			display:inline-block;
 			font-family:FontAwesome;
 			font-size: 1.5em;
+			padding-right: 6px;
+			vertical-align: top;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
