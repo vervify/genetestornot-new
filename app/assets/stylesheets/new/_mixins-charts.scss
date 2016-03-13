@@ -59,7 +59,7 @@
 	margin-top:1.5rem;
 	margin-right:.2rem;
 	padding-right:.8rem;
-	margin-bottom:1rem; 
+	margin-bottom:1rem;
 	font-style:normal;
 	padding-left:.8rem;
 	padding-top:.5rem;
@@ -90,30 +90,31 @@
 		display:block;
 		margin:auto;
 	}
-	
+
 	.procon-hd {
 		@include procon-hd;
 	}
 	.procon-blurb {
 		@include procon-blurb;
 	}
-	
+
 	.quote {
 		@include quote;
 	}
 	.play-video a {
 		@include font-roboto;
+		font-size: 1.05em;
 		&:before {
 			content:'\f144';
 			display:inline-block;
 			font-family:FontAwesome;
 			font-size: 1.5em;
-			padding-right: 6px;
+			padding-right: 7.5px;
 			vertical-align: top;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
-		
+
 	}
 }
 @mixin section-pro {
@@ -164,4 +165,3 @@
 		}
 	}
 }
-
