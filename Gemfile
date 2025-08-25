@@ -1,56 +1,94 @@
 source 'https://rubygems.org'
 
-gem 'rails_12factor', group: :production
-
-gem 'pry-rails'
-
-# featherlight for video modals
-gem 'featherlight'
+# Specify Ruby version (Rails 8 requires Ruby 3.2+)
+ruby '3.4.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '~> 8.0.0'
+
 # Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'pg', '~> 1.1'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+# Use the Puma web server [default in Rails 8]
+gem 'puma', '>= 5.0'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Use JavaScript with ESM import maps [default in Rails 8]
+gem 'importmap-rails'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Hotwire's SPA-like page accelerator [default in Rails 8]
+gem 'turbo-rails'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Hotwire's modest JavaScript framework [default in Rails 8]
+gem 'stimulus-rails'
 
 gem 'susy'
+
+# Build JSON APIs with ease
+gem 'jbuilder'
+
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '>= 4.0.1'
+
+# Use Kredis to get higher-level data types in Redis [default in Rails 8]
+# gem 'kredis'
+
+# Use Active Model has_secure_password [default in Rails 8]
+# gem 'bcrypt', '~> 3.1.7'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mswin mswin64 mingw x64_mingw jruby]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', require: false
+
+# Use Active Storage variants [default in Rails 8]
+# gem 'image_processing', '~> 1.2'
+
+# Replace Sass with Dartsass for SCSS support
+gem 'dartsass-sprockets'
+
+# jQuery support (keeping for existing JavaScript)
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+gem 'sprockets-rails'
+
+# Font Awesome icons
+gem 'font-awesome-rails', '~> 4.7'
+
+# Normalize CSS
 gem 'normalize-rails'
-gem 'font-awesome-rails'
+
+# featherlight for video modals (check compatibility or replace)
+gem 'featherlight'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  # Static analysis for security vulnerabilities [default in Rails 8]
+  gem 'brakeman', require: false
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Omakase Ruby styling [default in Rails 8]
+  gem 'rubocop-rails-omakase', require: false
+
+  # Enhanced Rails console
+  gem 'pry-rails'
 end
 
+group :development do
+  # Use console on exceptions pages [default in Rails 8]
+  gem 'web-console'
+
+  # Add speed badges [default in Rails 8]
+  # gem 'rack-mini-profiler'
+
+  # Speed up commands on slow machines / big apps [default in Rails 8]
+  # gem 'spring'
+end
+
+group :production do
+  # For Heroku deployment (replaces rails_12factor)
+  gem 'rails_serve_static_assets'
+  gem 'rails_stdout_logging'
+end

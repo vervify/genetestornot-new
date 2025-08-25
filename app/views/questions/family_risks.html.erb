@@ -29,7 +29,7 @@
 		<div class="qnav-content panel-body like-list">
 
 			<p>
-				First, consider the information below. 
+				First, consider the information below.
 				Then, at the end, submit your answer.
 			</p>
 			<p>You must select an answer to each question to move ahead. Once you move ahead, you can return to an answered question by clicking the numbers above.</p>
@@ -71,8 +71,8 @@
 							<td><div class="age-85"></div></td>
 						</tr>
 						<tr class="ages">
-							<td> <i>by Age</i> <b>70</b> </td> 
-							<td> <i>by Age</i> <b>85</b> </td> 
+							<td> <i>by Age</i> <b>70</b> </td>
+							<td> <i>by Age</i> <b>85</b> </td>
 						</tr>
 					</table>
 				</li>
@@ -88,8 +88,8 @@
 							<td><div class="age-85"></div></td>
 						</tr>
 						<tr class="ages">
-							<td> <i>by Age</i> <b>70</b> </td> 
-							<td> <i>by Age</i> <b>85</b> </td> 
+							<td> <i>by Age</i> <b>70</b> </td>
+							<td> <i>by Age</i> <b>85</b> </td>
 						</tr>
 					</table>
 				</li>
@@ -103,7 +103,7 @@
 			</h3>
 			<p>
 If any of your parents, brothers, or sisters have been diagnosed with Alzheimer's disease, your chance of developing this disease nearly doubles. The numbers shown above are estimates; exact numbers are not known.
-				
+
 			</p>
 			<div class="panel">
 				<div class="panel-header">Limitations to what you can <span class="segment">
@@ -159,6 +159,9 @@ If any of your parents, brothers, or sisters have been diagnosed with Alzheimer'
 	</div>
 </div>
 <script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", (event) => {
+
+
 	$(function(){
 		if (localStorage.getItem('family_risks') !== null && localStorage.getItem('family_risks') !== 'null'){
 			$('#useful-link').html('<a href="/is_the_information_useful">2</a>')
@@ -169,21 +172,23 @@ If any of your parents, brothers, or sisters have been diagnosed with Alzheimer'
 		}
 		if (localStorage.getItem('useful') !== null && localStorage.getItem('useful') !== 'null'){
 			$('#timing-link').html('<a href="/is_the_timing_right">3</a>');
-			setTimeout(function() { 
+			setTimeout(function() {
 				$('#timing-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
 			}, 600);
 		}
 		if (localStorage.getItem('timing') !== null && localStorage.getItem('timing') !== 'null'){
 			$('#pros-link').html('<a href="/pros_and_cons">4</a>')
-			setTimeout(function() { 
+			setTimeout(function() {
 				$('#pros-link a').effect("highlight",{color: 'PowderBlue'}, 2000);
 			}, 800);
 		}
 		if (localStorage.getItem('pros_and_cons') !== null && localStorage.getItem('pros_and_cons') !== 'null'){
 			$('#my-results').html('<a href="/results">My Results</a>')
-			setTimeout(function() { 
+			setTimeout(function() {
 				$('#my-results a').effect("highlight",{color: 'PowderBlue'}, 2000);
 			}, 1000);
 		}
 	});
+
+});
 </script>

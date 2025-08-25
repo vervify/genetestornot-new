@@ -1,0 +1,52 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+CHANGELOG.md
+CLAUDE.md
+
+# Development files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependencies
+node_modules
+.bundle
+
+# IDE/Editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Rails specific
+log/*
+tmp/*
+public/assets
+public/packs
+public/packs-test
+storage/*
+.byebug_history
+
+# Test files
+coverage/
+.rspec
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore

@@ -2,12 +2,20 @@
 <html>
 	<head>
 		<title>Gene Test Or Not?</title>
-		<meta name=viewport content="width=device-width, initial-scale=1">
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+
+		<%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+		<%#= javascript_importmap_tags %>
 		<%= favicon_link_tag 'logo.ico' %>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js" integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />		<%= favicon_link_tag 'logo.ico' %>
 	</head>
+	<body>
 	<div class="header hide-for-print">
 		<div class="row">
 			<div class="column">
@@ -36,4 +44,32 @@
 		<%= yield %>
 	</div>
 	<%= render 'layouts/footer' %>
+	<script>
+		$( document ).ready(function() {
+			$('.trigger').on("click", function() {
+				$('body').toggleClass("mobile-nav");
+			});
+
+			$( "#dialog-message" ).hide();
+
+			$("#next-button").click(function(e) {
+				if ($("input[class=check-box]:checked").val() == undefined){
+						e.preventDefault();
+						$( "#dialog-message" ).show("fade");
+				} else {
+					localStorage.setItem($("input[class=check-box]:checked").prop('name'), $("input[class=check-box]:checked").val());
+				}
+			});
+
+			$("#modal").click(function(e){
+				e.preventDefault();
+				$("#dialog-message").show("fade");
+			})
+
+			$( ".modal-close" ).click(function() {
+				$( "#dialog-message" ).hide('fade');
+			});
+		});
+	</script>
+	</body>
 </html>
