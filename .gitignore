@@ -8,3 +8,4 @@ log/development.log
 /config/master.key
 
 tmp/*
+/config/credentials/production.key
