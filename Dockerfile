@@ -19,11 +19,16 @@ RUN apt-get update -qq && \
     apt-get install -y --no-install-recommends \
       build-essential \
       libpq-dev \
-      nodejs \
-      npm \
       curl \
-      postgresql-client && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+      postgresql-client \
+      ca-certificates gnupg && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Node.js (LTS) from NodeSource
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g yarn && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set production environment
 ENV RAILS_ENV="production" \
