@@ -42,7 +42,7 @@ RUN apt-get update -qq && \
 # Install application gems
 # 1) Match Bundler version to Gemfile.lock ("BUNDLED WITH")
 #    If you don't know it yet, open Gemfile.lock and check the last lines.
-ARG BUNDLER_VERSION=2.5.18
+ARG BUNDLER_VERSION=2.4.19
 RUN gem install bundler -v $BUNDLER_VERSION
 
 COPY Gemfile Gemfile.lock ./
