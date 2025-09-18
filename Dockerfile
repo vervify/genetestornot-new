@@ -40,10 +40,27 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install application gems
+# 1) Match Bundler version to Gemfile.lock ("BUNDLED WITH")
+#    If you don't know it yet, open Gemfile.lock and check the last lines.
+ARG BUNDLER_VERSION=2.5.18
+RUN gem install bundler -v $BUNDLER_VERSION
+
 COPY Gemfile Gemfile.lock ./
-RUN bundle install && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
-    bundle exec bootsnap precompile --gemfile
+
+# 2) Install gems with clearer logs and retries
+RUN bundle config set without 'development test' \
+ && bundle config set deployment 'true' \
+ && bundle install --jobs=4 --retry=3 --verbose
+
+# 3) Clean bundler caches (split from install so failures are obvious)
+RUN rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
+
+# 4) Only precompile bootsnap if it's actually in the bundle
+RUN if bundle show bootsnap > /dev/null 2>&1; then \
+      echo 'Precompiling bootsnap cache…' && bundle exec bootsnap precompile --gemfile; \
+    else \
+      echo 'bootsnap not in bundle; skipping precompile.'; \
+    fi
 
 # Copy application code
 COPY . .
