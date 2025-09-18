@@ -1,0 +1,46 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RUBY_VERSION: "3.4.5"   # matches your Dockerfile default
+    image: myapp:3.4.5
+    container_name: myapp-web
+    env_file: .env
+    environment:
+      # Your Dockerfile sets RAILS_ENV=production & BUNDLE_WITHOUT=development.
+      # Keep production here for parity with your build (precompiled assets, etc.).
+      RAILS_ENV: production
+      RAILS_LOG_TO_STDOUT: "1"
+      RAILS_SERVE_STATIC_FILES: "1"
+      PORT: "80"                         # Rails listens on 80 in the container
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:80"  # visit http://localhost:3000 -> maps to container port 80
+    # No code mount: you're running a production image with precompiled assets.
+    # If you mount the app dir in production mode, you’ll invalidate precompiles.
+
+  db:
+    image: postgres:16
+    container_name: myapp-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-myapp_production}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ${POSTGRES_DB:-myapp_production}"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    # Optional: expose for desktop clients without clobbering host 5432
+    ports:
+      - "5434:5432"
+
+volumes:
+  pgdata:
