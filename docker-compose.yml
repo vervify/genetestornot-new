@@ -6,7 +6,6 @@ services:
       args:
         RUBY_VERSION: "3.4.5"   # matches your Dockerfile default
     image: myapp:3.4.5
-    container_name: myapp-web
     env_file: .env
     environment:
       # Your Dockerfile sets RAILS_ENV=production & BUNDLE_WITHOUT=development.
@@ -15,7 +14,14 @@ services:
       RAILS_LOG_TO_STDOUT: "1"
       RAILS_SERVE_STATIC_FILES: "1"
       PORT: "80"                         # Rails listens on 80 in the container
-      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      DATABASE_URL: ${DATABASE_URL:-postgres://postgres:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-myapp_production}}
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:$${PORT:-80}/up >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
     depends_on:
       db:
         condition: service_healthy
@@ -26,10 +32,10 @@ services:
 
   db:
     image: postgres:16
-    container_name: myapp-db
+    profiles: ["local"]
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB:-myapp_production}
     volumes:
       - pgdata:/var/lib/postgresql/data

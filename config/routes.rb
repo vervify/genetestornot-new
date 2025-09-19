@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   get 'is_the_information_useful' => 'questions', as: 'useful'
 
   get 'results' => 'questions', as: 'results'
+  
+  get "/up", to: proc { [200, { "Content-Type" => "text/plain" }, ["OK"]] }
 
 end
