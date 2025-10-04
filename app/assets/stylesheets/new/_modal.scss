@@ -35,14 +35,15 @@
 	}
 }
 #dialog-message .panel {
-	width:100%;
-	height:auto;
-		max-width:600px;
-		display:table;
-
-		h3 {
-			margin-top:1rem;
-		}
+    width: auto;
+    max-width: 600px;
+    min-width: 350px;
+    height: auto;
+    
+    @media (min-width: $breakpoint) {
+        max-width: 700px;
+    }
+}
 
 	.button-consider {
 		margin-top:.5rem;
