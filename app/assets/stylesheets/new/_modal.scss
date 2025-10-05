@@ -10,21 +10,16 @@
 	height: 100%;
 	background: RGBA(0,0,0,.5);
 	.panel {
-		position: absolute;
-		top:0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-		width:350px;
-		// height:185px;
-		background: white;
-		-webkit-border-radius: .15rem;
-		-moz-border-radius: .15rem;
-		border-radius: .15rem;
-		p {
-			color: darken($purple, 30%);
-		}
+		position: fixed;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    	width: 350px;
+    	background: white;
+    	border-radius: .15rem;
+    	p {
+        	color: darken($purple, 30%);
+    	}
 	}
 	.modal-close{
 		position:absolute;
